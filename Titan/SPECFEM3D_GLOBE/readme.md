@@ -20,26 +20,26 @@
   cp -rp ./benchmark-scripts ~/benchmark-scripts
   ```
 
-- copy files `configure.summit.sh` and `mk_summit.sh` to code directory `~/SPECFEM3D_GLOBE/`
+- copy files `configure.titan.sh` and `mk_titan.sh` to code directory `~/SPECFEM3D_GLOBE/`
   ```
-  cp configure.summit.sh ~/SPECFEM3D_GLOBE/
-  cp mk_summit.sh ~/SPECFEM3D_GLOBE/
+  cp configure.titan.sh ~/SPECFEM3D_GLOBE/
+  cp mk_titan.sh ~/SPECFEM3D_GLOBE/
   ```
 
 #### B. configure package:
 
 ```
 cd ~/SPECFEM3D_GLOBE
-./configure.summit.sh
+./configure.titan.sh
 ```
 
-compiles package with IBM compilers
+compiles package with Cray compilers
 
 
 #### C. compile to test successful compilation:
 
 ```
-./mk_summit.sh
+./mk_titan.sh
 ```
 
 creates binaries in:
@@ -62,9 +62,10 @@ cd ~/benchmarks/
 ```
 
 
-#### F. go to the scratch work directory, e.g., /gpfs/alpine/csc190/scratch/dpeter/ and submit job:
+#### F. go to the scratch work directory, e.g., /lustre/atlas/scratch/dpeter/geo111/ and submit job:
 
 ```
-cd ${SCRATCH}/RUN/CPUStrong96/
-bsub go_benchmark.summit.sh
+cd ${SCRATCH}/RUN/CPUstrong96/
+qsub go_benchmark.titan.bash
 ```
+
