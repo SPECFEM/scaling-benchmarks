@@ -1,0 +1,47 @@
+running simulation: Wed Dec 19 08:31:45 EST 2018
+directory: /lustre/atlas1/geo111/scratch/dpeter/RUN/CPUstrong96
+
+Currently Loaded Modulefiles:
+  1) modules/3.2.10.6
+  2) nodestat/2.2-1.0502.60539.1.31.gem
+  3) sdb/1.1-1.0502.63652.4.27.gem
+  4) alps/5.2.4-2.0502.9950.37.1.gem
+  5) lustre-cray_gem_s/2.8.2_3.0.101_0.46.1_1.0502.8871-1.0502.0.32.1
+  6) udreg/2.3.2-1.0502.10518.2.17.gem
+  7) ugni/6.0-1.0502.10863.8.28.gem
+  8) gni-headers/4.0-1.0502.10859.9.19.gem
+  9) dmapp/7.0.1-1.0502.11080.8.74.gem
+ 10) xpmem/0.1-2.0502.64982.7.19.gem
+ 11) hss-llm/7.2.0
+ 12) Base-opts/1.0.2-1.0502.60680.2.4.gem
+ 13) craype-network-gemini
+ 14) craype-interlagos
+ 15) craype/2.5.13
+ 16) cray-mpich/7.6.3
+ 17) lustredu/1.4
+ 18) xalt/0.7.5
+ 19) git/2.13.0
+ 20) module_msg/0.1
+ 21) modulator/1.2.0
+ 22) hsi/5.0.2.p1
+ 23) DefApps
+ 24) cce/8.6.4
+ 25) cray-libsci/16.11.1
+ 26) pmi/5.0.9-1.0000.10911.175.4.gem
+ 27) rca/1.0.0-2.0502.60530.1.63.gem
+ 28) atp/2.1.1
+ 29) PrgEnv-cray/5.2.82
+ 30) cudatoolkit/9.1.85_3.10-1.0502.df1cc54.3.1
+
+
+running mesher...
+Wed Dec 19 08:31:45 EST 2018
+Application 19413310 resources: utime ~5078s, stime ~293s, Rss ~736676, inblocks ~653260, outblocks ~99314663
+
+running solver...
+Wed Dec 19 08:32:50 EST 2018
+Application 19413324 resources: utime ~959s, stime ~384s, Rss ~1728524, inblocks ~97947181, outblocks ~802005
+
+see results in directory: OUTPUT_FILES/
+
+done: Wed Dec 19 08:33:14 EST 2018

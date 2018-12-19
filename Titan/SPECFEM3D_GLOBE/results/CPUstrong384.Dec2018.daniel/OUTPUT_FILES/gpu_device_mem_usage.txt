@@ -1,0 +1,1 @@
+0: @f 0: GPU memory usage: used = 335.125000 MB, free = 5365.750000 MB, total = 5700.875000 MB

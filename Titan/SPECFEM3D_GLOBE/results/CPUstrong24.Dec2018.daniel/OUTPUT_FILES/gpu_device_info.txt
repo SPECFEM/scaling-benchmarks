@@ -1,0 +1,20 @@
+Device Name = Tesla K20X
+memory:
+  totalGlobalMem (in MB): 5700.875000
+  totalGlobalMem (in GB): 5.567261
+  totalConstMem (in bytes): 65536
+  Maximum 1D texture size (in bytes): 65536
+  sharedMemPerBlock (in bytes): 49152
+  regsPerBlock (in bytes): 65536
+blocks:
+  Maximum number of threads per block: 1024
+  Maximum size of each dimension of a block: 1024 x 1024 x 64
+  Maximum sizes of each dimension of a grid: 2147483647 x 65535 x 65535
+features:
+  Compute capability of the device = 3.5
+  multiProcessorCount: 14
+  canMapHostMemory: TRUE
+  deviceOverlap: TRUE
+  concurrentKernels: TRUE
+memory usage:
+  rank 0: GPU memory usage: used = 77.500000 MB, free = 5623.375000 MB, total = 5700.875000 MB

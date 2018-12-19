@@ -1,0 +1,1 @@
+../../../Summit/SPECFEM3D_GLOBE/benchmark-scripts/setup_strongscaling.pl
