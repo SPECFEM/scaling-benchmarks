@@ -1,0 +1,31 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@batch1>
+Subject: Job 222548: <go_benchmark> in cluster <summit> Done
+
+Job <go_benchmark> was submitted from host <login4> by user <dpeter> in cluster <summit> at Mon Dec 10 13:29:38 2018
+Job was executed on host(s) <1*batch1>, in queue <batch>, as user <dpeter> in cluster <summit> at Mon Dec 10 13:29:39 2018
+                            <42*a04n15>
+                            <42*a04n16>
+                            <42*a04n17>
+                            <42*a04n18>
+                            <42*a05n01>
+                            <42*a05n02>
+                            <42*a05n03>
+                            <42*a05n04>
+                            <42*a05n05>
+                            <42*a05n06>
+                            <42*a05n07>
+                            <42*a05n08>
+                            <42*a05n09>
+                            <42*a05n10>
+                            <42*a05n11>
+                            <42*a05n12>
+</ccs/home/dpeter> was used as the home directory.
+</gpfs/alpine/csc190/scratch/dpeter/RUN/CPUstrong96> was used as the working directory.
+Started at Mon Dec 10 13:29:39 2018
+Terminated at Mon Dec 10 13:30:47 2018
+Results reported at Mon Dec 10 13:30:47 2018
+
+The output (if any) is above this job summary.
+

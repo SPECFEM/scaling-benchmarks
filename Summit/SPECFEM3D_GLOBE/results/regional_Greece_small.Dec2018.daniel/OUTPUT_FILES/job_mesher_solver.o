@@ -1,0 +1,33 @@
+running simulation: Sun Dec  9 11:43:38 EST 2018
+directory: /gpfs/alpine/csc190/scratch/dpeter/regional_Greece_small.1
+
+nodes: batch1 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11 a01n11
+
+job ID: 222434
+
+
+running mesher...
+Sun Dec 9 11:43:38 EST 2018
+
+running solver...
+Sun Dec 9 11:44:13 EST 2018
+
+see results in directory: OUTPUT_FILES/
+
+done: Sun Dec  9 11:44:20 EST 2018
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@batch1>
+Subject: Job 222434: <SPECFEM3D_mesher_solver> in cluster <summit> Done
+
+Job <SPECFEM3D_mesher_solver> was submitted from host <login5> by user <dpeter> in cluster <summit> at Sun Dec  9 11:43:35 2018
+Job was executed on host(s) <1*batch1>, in queue <batch>, as user <dpeter> in cluster <summit> at Sun Dec  9 11:43:36 2018
+                            <42*a01n11>
+</ccs/home/dpeter> was used as the home directory.
+</gpfs/alpine/csc190/scratch/dpeter/regional_Greece_small.1> was used as the working directory.
+Started at Sun Dec  9 11:43:36 2018
+Terminated at Sun Dec  9 11:44:26 2018
+Results reported at Sun Dec  9 11:44:26 2018
+
+The output (if any) is above this job summary.
+

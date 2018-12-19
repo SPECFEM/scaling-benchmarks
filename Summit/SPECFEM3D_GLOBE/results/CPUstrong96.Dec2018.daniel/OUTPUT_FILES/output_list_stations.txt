@@ -1,0 +1,15 @@
+ 
+ total number of stations:  12
+ 
+ II.AAK epicentral distance  136.3088989  deg
+ II.BORG epicentral distance  85.67403412  deg
+ II.GAR epicentral distance  135.0269470  deg
+ II.LVZ epicentral distance  107.1892929  deg
+ II.TLY epicentral distance  141.5296173  deg
+ IU.BBSR epicentral distance  45.99493408  deg
+ IU.DAV epicentral distance  165.7162476  deg
+ IU.HRV epicentral distance  56.18729019  deg
+ IU.KONO epicentral distance  95.29290771  deg
+ IU.MIDW epicentral distance  113.9869614  deg
+ IU.PMSA epicentral distance  50.94296265  deg
+ CI.PAS epicentral distance  67.96223450  deg

@@ -1,0 +1,102 @@
+# .bashrc_setup
+# adding system specifics
+
+# what machine/architecture
+HOSTNAME=$(hostname)
+TYPE=$(uname -p)
+
+if [[ "${HOSTNAME}" == *titan* ]]
+then
+  #echo "hello, on titan"
+  export SYSTEM_NAME="titan"
+  export SCRATCH=$MEMBERWORK/geo111/
+
+  module unload PrgEnv-pgi
+  #module unload PrgEnv-gnu
+
+  # cray
+  module load PrgEnv-cray
+  #module switch PrgEnv-pgi PrgEnv-cray
+  #module load craype-hugepages8M
+
+  # gnu
+  # adios only with gnu
+  #module load PrgEnv-gnu
+
+  # new version
+  #module switch gcc gcc/4.9.0
+  #module load adios/1.9.0
+
+  #module load cudatoolkit/5.5.51-1.0502.9594.3.1 # needs gcc < 4.9
+  #module load cudatoolkit/6.5.14-1.0502.9836.8.1 # needs gcc <4.9
+  #module load cudatoolkit/7.0.28-1.0502.10280.4.1
+  #module load cudatoolkit/7.5.18-1.0502.10743.2.1
+  module load cudatoolkit/9.1.85_3.10-1.0502.df1cc54.3.1
+
+  # performance report
+  # (cuda 7.5 support)
+  #module load perftools-base/6.4.0
+  #module load perftools/6.4.0
+
+elif [[ "${HOSTNAME}" == *chester* ]]
+then
+  #echo "hello, on chester"
+  export SYSTEM_NAME="chester"
+
+  module load cudatoolkit
+  module unload PrgEnv-pgi
+  module unload PrgEnv-gnu  
+  # cray
+  module load PrgEnv-cray
+  module load craype-hugepages8M
+  #module load cce/8.1.1
+
+elif [[ "${HOSTNAME}" == *eos* ]]
+then
+  #echo "hello, on eos"
+  export SYSTEM_NAME="eos"
+
+  module unload PrgEnv-intel
+  module load PrgEnv-gnu
+
+  module switch gcc gcc/4.9.0
+  module load adios/1.9.0
+
+elif [[ "${HOSTNAME}" == *summitdev* ]]
+then
+  #echo "hello, on summitdev"
+  export SCRATCH=/lustre/atlas/scratch/${USER}/geo111/
+  export SYSTEM_NAME="summitdev"
+
+  # cuda
+  module load cuda/8.0.54 
+
+  alias bsub-job-gpu='bsub -env "all,JOB_FEATURE='\''gpudefault,gpumps'\''" < '
+  alias bsub-job='bsub < '
+  alias showq='bjobs -u all'
+
+#elif [[ "${HOSTNAME}" == *login* ]]  # summit only names login-nodes as login1,..
+elif [[ "${LMOD_SYSTEM_NAME}" == *summit* ]]
+then
+  #echo "hello, on summit"
+  export SCRATCH=/gpfs/alpine/csc190/scratch/${USER}/
+  export SYSTEM_NAME="summit"
+
+  # cuda
+  module load cuda/9.2.148
+
+  # gnu
+  #module switch xl gcc/6.4.0
+  # pgi
+  #module switch xl pgi/18.7
+
+  alias bsub-job-gpu='bsub -env "all,JOB_FEATURE='\''gpudefault,gpumps'\''" < '
+  alias bsub-job='bsub < '
+  alias showq='bjobs -u all'
+
+else
+  echo "Not a recognized system: ${HOSTNAME}"
+  :
+fi
+
+

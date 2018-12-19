@@ -1,0 +1,330 @@
+ 
+ ******************************
+ **** Specfem3D MPI Solver ****
+ ******************************
+ 
+ Version: 7.0.2
+ 
+ 
+ There are  96  MPI processes
+ Processes are numbered from 0 to  95
+ 
+ There are  256  elements along xi in each chunk
+ There are  256  elements along eta in each chunk
+ 
+ There are  4  slices along xi in each chunk
+ There are  4  slices along eta in each chunk
+ There is a total of  16  slices in each chunk
+ There are  6  chunks
+ There is a total of  96  slices in all the chunks
+ 
+ NDIM =  3
+ 
+ NGLLX =  5
+ NGLLY =  5
+ NGLLZ =  5
+ 
+ using single precision for the calculations
+ 
+ smallest and largest possible floating-point numbers are:  0.1175494351E-37 0.3402823466E+39
+ 
+ model: 1D_transversely_isotropic_prem
+   incorporating the oceans using equivalent load
+   incorporating ellipticity
+   incorporating surface topography
+   incorporating self-gravitation (Cowling approximation)
+   incorporating rotation
+   incorporating attenuation using  3  standard linear solids
+ 
+   no 3-D lateral variations
+   no heterogeneities in the mantle
+   no crustal variations
+   using unmodified 1D crustal model with two layers
+   incorporating transverse isotropy
+   no inner-core anisotropy
+   no general mantle anisotropy
+ 
+ 
+ 
+ GPU_MODE Active.
+   runtime :  0
+   platform: NVIDIA
+   device  : Tesla
+ GPU number of devices per node: min = 1
+                                 max = 1
+ 
+ mesh databases:
+   reading in crust/mantle databases...
+   reading in outer core databases...
+   reading in inner core databases...
+   reading in coupling surface databases...
+   reading in addressing...
+ Spatial distribution of the slices
+                       15   11    7    3
+                       14   10    6    2
+                       13    9    5    1
+                       12    8    4    0
+  
+    47   43   39   35      31   27   23   19      79   75   71   67
+    46   42   38   34      30   26   22   18      78   74   70   66
+    45   41   37   33      29   25   21   17      77   73   69   65
+    44   40   36   32      28   24   20   16      76   72   68   64
+  
+                       95   91   87   83
+                       94   90   86   82
+                       93   89   85   81
+                       92   88   84   80
+  
+                       63   59   55   51
+                       62   58   54   50
+                       61   57   53   49
+                       60   56   52   48
+  
+   reading in MPI databases...
+   for overlapping of communications with calculations:
+ 
+   percentage of edge elements in crust/mantle  11.24023438 %
+   percentage of volume elements in crust/mantle  88.75976562 %
+ 
+   percentage of edge elements in outer core  28.54166603 %
+   percentage of volume elements in outer core  71.45833588 %
+ 
+   percentage of edge elements in inner core  25.35714340 %
+   percentage of volume elements in inner core  74.64285278 %
+ 
+ 
+ Elapsed time for reading mesh in seconds =  0.2089038640
+ 
+ topography:
+   topography/bathymetry: min/max =  -7747 5507
+ 
+ Elapsed time for reading topo/bathy in seconds =  0.1177072674
+ 
+ 
+ sources: 1
+ 
+ ********************
+  locating sources
+ ********************
+ 
+ 
+ source #  1
+ 
+   source located in slice  17
+                  in element  25952
+ 
+   using moment tensor source: 
+     xi coordinate of source in that element:  0.786710592381890117
+     eta coordinate of source in that element:  0.288890905352082561
+     gamma coordinate of source in that element:  -0.323510553746680141
+ 
+   source time function:
+     using (quasi) Heaviside source time function
+ 
+     half duration:  20.0000000000000000  seconds
+     time shift:  0.000000000000000000E+00  seconds
+ 
+   magnitude of the source:
+        scalar moment M0 =  0.262997300366372602E+29  dyne-cm
+     moment magnitude Mw =  8.24663438442510532
+ 
+ 
+   original (requested) position of the source:
+ 
+         latitude:  -13.8200000000000003
+        longitude:  -67.2500000000000000
+            depth:  647.100000000000023  km
+ 
+   position of the source that will be used:
+ 
+         latitude:  -13.8200000000000056
+        longitude:  -67.2499999999999858
+            depth:  647.099999999998317  km
+ 
+   Error in location of the source:  0.1732580659E-11  km
+ 
+ maximum error in location of the sources:  0.1732580659E-11  km
+ 
+ 
+ Elapsed time for detection of sources in seconds =  0.436631892807781696E-02
+ 
+ End of source detection - done
+ 
+ 
+ receivers:
+ 
+ Total number of receivers =  12
+ 
+ 
+ ********************
+  locating receivers
+ ********************
+ 
+ reading receiver information...
+ 
+ Stations sorted by epicentral distance:
+ Station #     6:                  IU.BBSR    epicentral distance:     45.994934 degrees
+ Station #    11:                  IU.PMSA    epicentral distance:     50.942963 degrees
+ Station #     8:                   IU.HRV    epicentral distance:     56.187290 degrees
+ Station #    12:                   CI.PAS    epicentral distance:     67.962234 degrees
+ Station #     2:                  II.BORG    epicentral distance:     85.674034 degrees
+ Station #     9:                  IU.KONO    epicentral distance:     95.292908 degrees
+ Station #     4:                   II.LVZ    epicentral distance:    107.189293 degrees
+ Station #    10:                  IU.MIDW    epicentral distance:    113.986961 degrees
+ Station #     3:                   II.GAR    epicentral distance:    135.026947 degrees
+ Station #     1:                   II.AAK    epicentral distance:    136.308899 degrees
+ Station #     5:                   II.TLY    epicentral distance:    141.529617 degrees
+ Station #     7:                   IU.DAV    epicentral distance:    165.716248 degrees
+ 
+ maximum error in location of all the receivers:  0.3606654255E-11  km
+ 
+ Elapsed time for receiver detection in seconds =  0.822666670428588986E-01
+ 
+ End of receiver detection - done
+ 
+ 
+ found a total of  12  receivers in all slices
+ this total is okay
+ 
+ source arrays:
+   number of sources is  1
+   size of source array                 =  0.1430511475E-02 MB
+                                        =  0.1396983862E-05 GB
+ 
+ seismograms:
+   seismograms written by all processes
+   writing out seismograms at every NTSTEP_BETWEEN_OUTPUT_SEISMOS =  300
+   maximum number of local receivers is  2  in slice  52
+   size of maximum seismogram array       =  0.6866455078E-02 MB
+                                          =  0.6705522537E-05 GB
+ 
+ 
+ Total number of samples for seismograms =  300
+ 
+ 
+ Reference radius of the Earth used is  6371.00000000000000  km
+ 
+ 
+ incorporating the oceans using equivalent load
+ 
+ incorporating ellipticity
+ 
+ incorporating surface topography
+ 
+ incorporating self-gravitation (Cowling approximation)
+ 
+ incorporating rotation
+ 
+ incorporating attenuation using  3  standard linear solids
+ 
+ 
+ 
+ preparing mass matrices
+ preparing constants
+ preparing gravity arrays
+ preparing attenuation
+   attenuation period range min/max:  17 / 975  (s)
+   ATTENUATION_1D_WITH_3D_STORAGE  :  T
+   ATTENUATION_3D                  :  F
+ preparing wavefields
+   allocating wavefields
+   initializing wavefields
+ preparing oceans arrays
+   number of global points on oceans =  66049
+ preparing fields and constants on GPU devices
+ 
+   minimum memory requested     :  984.848930358886719 MB per process
+ 
+   loading rotation arrays
+   loading non-gravity/gravity arrays
+   loading attenuation
+   loading strain
+   loading MPI interfaces
+   loading oceans arrays
+   loading crust/mantle region
+   loading outer core region
+   loading inner core region
+   transferring initial wavefield
+ 
+   GPU usage: free  = 14685.43750  MB 91 %
+              used  = 1442.562500  MB 9 %
+              total = 16128.00000  MB 100 %
+ 
+ preparing optimized arrays
+   using force vectorization
+   using Deville products
+   inverse table of ibool done
+   fused array done
+   bandwidth test (STREAM TRIAD): 
+      memory accesses =  92.44187927 MB
+      timing  min/max =  0.6298403256E-02 s /  0.6406083703E-02 s
+      timing      avg =  0.6361128762E-02 s
+      bandwidth       =  14.19170666 GB/s
+ 
+ 
+ Elapsed time for preparing timerun in seconds =  2.815592289
+ 
+ 
+ time loop:
+ 
+               scheme:         Newmark
+            time step:  0.1899999976  s
+ number of time steps:  300
+ total simulated time:  0.4468333423  minutes
+ start time          : -30.00000000  seconds
+ 
+ All processes are synchronized before time loop
+ 
+ Starting time iteration loop...
+ 
+ Time step #  5
+ Time:  -0.4873333275  minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) =  11084469.00
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =  1.001929045
+ Max of strain, eps_trace_over_3_crust_mantle = 0.1380936354
+ Max of strain, epsilondev_crust_mantle  = 605.8746338
+ Elapsed time in seconds =  0.156465600011870265E-01
+ Elapsed time in hh:mm:ss =      0 h 00 m 00 s
+ Mean elapsed time per time step in seconds =  0.312931200023740513E-02
+ Time steps done =  5  out of  300
+ Time steps remaining =  295
+ Estimated remaining time in seconds =  0.923147040070034564
+ Estimated remaining time in hh:mm:ss =      0 h 00 m 00 s
+ Estimated total run time in seconds =  0.938793600071221590
+ Estimated total run time in hh:mm:ss =      0 h 00 m 00 s
+ We have done  1.666666627 % of that
+ The run will finish approximately on (in local time): Mon Dec 10, 2018 13:30
+ ************************************************************
+ **** BEWARE: the above time estimates are not very reliable
+ **** because fewer than 100 iterations have been performed
+ ************************************************************
+ 
+ Time step #  300
+ Time:  0.4468333423  minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) =  16294913.00
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =  1.142200589
+ Max of strain, eps_trace_over_3_crust_mantle = 0.1125437617
+ Max of strain, epsilondev_crust_mantle  = 326.1832581
+ Elapsed time in seconds =  0.997956551960669458
+ Elapsed time in hh:mm:ss =      0 h 00 m 00 s
+ Mean elapsed time per time step in seconds =  0.332652183986889820E-02
+ Time steps done =  300  out of  300
+ Time steps remaining =  0
+ Estimated remaining time in seconds =  0.000000000000000000E+00
+ Estimated remaining time in hh:mm:ss =      0 h 00 m 00 s
+ Estimated total run time in seconds =  0.997956551960669458
+ Estimated total run time in hh:mm:ss =      0 h 00 m 00 s
+ We have done  100.0000000 % of that
+ 
+ 
+ Total number of time steps written:  300
+ 
+ Writing the seismograms in parallel took  0.804852470755577087E-01  seconds
+ 
+ Time-Loop Complete. Timing info:
+ Total elapsed time in seconds =  1.08088737691286951
+ Total elapsed time in hh:mm:ss =      0 h 00 m 01 s
+ finalizing simulation
+ 
+ End of the simulation
+ 
