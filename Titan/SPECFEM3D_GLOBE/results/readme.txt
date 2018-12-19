@@ -12,7 +12,8 @@ On plotting results:
 
 * results: Dec 19, 2018
 
-  Titan strong/weak scaling
+  Titan strong scaling
+  SPECFEM3D_GLOBE devel version commit 37f8f29d4b58805dd1da3c463b135a10d1b9dc57
 
 
   
