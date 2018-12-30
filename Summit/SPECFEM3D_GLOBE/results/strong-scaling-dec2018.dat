@@ -1,0 +1,11 @@
+# strong scaling benchmark - Summit
+# Wenjie Lei, Dec 2018
+#
+#nproc #nproc_xi  	# avg time per time step	#total elapsed time (s)
+#6	1	 	failed (not enough GPU memory, simulation needs ~ 16GB)
+24	2		0.0121				3.63
+96	4		0.00335				1.005
+384	8		0.00117				0.351
+1535	16		0.000661			0.1983
+#6144	32		?
+

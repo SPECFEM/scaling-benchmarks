@@ -1,5 +1,8 @@
-#nproc	#total elapsed time (s)
-24	21.3082
-96	5.4378
-384	1.56
+# strong scaling benchmark - Titan
+# daniel peter, dec 2018
+#
+#nproc 	#nproc_xi	# avg time per time step	#total elapsed time (s)
+24	2		0.07102				21.3082
+96	4		0.018126			5.4378
+384	8		0.0052				1.56
 
