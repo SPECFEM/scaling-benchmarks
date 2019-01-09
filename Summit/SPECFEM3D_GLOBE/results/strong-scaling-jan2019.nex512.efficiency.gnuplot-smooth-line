@@ -1,0 +1,71 @@
+#!/usr/bin/gnuplot -persist
+set terminal pngcairo enhanced size 800,600  font "Arial,11" 
+set output 'strong-scaling-Summit-NEX512-efficiency-smooth.png'
+
+# line styles
+# for line with spacing around points
+set style line 1 lt 1 lw 1.8 pt 7 pointinterval -1 pointsize 1.2
+set style line 2 lt 2 lw 1.8 pt 7 pointinterval -1 pointsize 1.2
+set pointintervalbox 2 
+
+set logscale x 10
+#set logscale y 10    # smooth cspline will not work for a log-log scale
+set xtics nomirror
+set ytics nomirror
+
+set xlabel "Number of GPUs" 
+set ylabel "Scaling efficiency (%)" 
+
+set yrange[20:110]
+
+# ideal scaling
+# from first run - nex 256
+f(x) = 0.0121 * 24 * 1 / x
+# from first run - nex 512
+g(x) = 0.020275 * 96 * 1 / x
+
+# efficiency
+# ideal: 100 percent
+d1(x,y) = 100. / ( y / f(x) )
+d2(x,y) = 100. / ( y / g(x) )
+
+#single plot
+#plot [10:10000] 'strong-scaling-dec2018.dat' u 1:(d1($1,$3)) w lp t 'Summit - NEX 256', 'strong-scaling-jan2019.nex512.dat' u 1:(d2($1,$3)) w lp t 'Summit - NEX 512',100.0 lt 0 t 'ideal'
+#quit
+
+# multiple plots (overlayed)
+set multiplot
+
+# fix plot margins
+set tmargin 2
+set bmargin 5
+set lmargin 15
+set rmargin 15
+
+set key at graph 1.0,0.97 spacing -1
+# NEX 256
+# smooth results
+plot [10:10000] 'strong-scaling-dec2018.dat' u 1:(d1($1,$3)) smooth cspline ls 1 t 'Summit - NEX 256','' u 1:(d1($1,$3)) w p ls 1 t ' '
+
+# remove labeling (to avoid thickening by repeated writing)
+unset xlabel
+unset ylabel
+unset y2label
+unset tics
+
+# move key
+set key at graph 1.0,0.93 spacing -1
+
+# NEX 512
+# smooth results
+plot [10:10000] 'strong-scaling-jan2019.nex512.dat' u 1:(d2($1,$3)) smooth cspline ls 2 t 'Summit - NEX 512','' u 1:(d2($1,$3)) w p ls 2 t ' '
+
+# move key
+set key at graph 1.0,0.9 spacing 1
+
+# ideal line
+plot [10:10000] 100.0 lt 0 t ''
+
+unset multiplot
+
+
