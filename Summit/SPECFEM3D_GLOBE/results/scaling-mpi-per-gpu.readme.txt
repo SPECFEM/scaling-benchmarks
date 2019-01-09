@@ -1,0 +1,88 @@
+# Summit benchmarks
+
+* CPUstrong96 - NEX 256 / NPROC_XI 4 / 96 MPI processes
+
+- 1 MPI process per GPU: 
+
+script:
+#BSUB -nnodes 16
+jsrun -n96 -r6 -g1 -a1 -c1 ./bin/xmeshfem3D
+output:
+ Estimated total run time in seconds =  0.997956551960669458
+ Total elapsed time in seconds =  1.08088737691286951
+memory:
+ 0: @f 0: GPU memory usage: used = 1442.562500 MB, free = 14685.437500 MB, total = 16128.000000 MB
+
+- 2 MPI processes per GPU:
+
+script:
+#BSUB -nnodes 8 
+#BSUB -alloc_flags gpumps  # gpu multiple MPI process per GPU
+jsrun -n48 -r6 -g1 -a2 -c2 ./bin/xspecfem3D
+output:
+ Estimated total run time in seconds =  1.84122100402601063
+ Total elapsed time in seconds =  1.91156399506144226
+memory:
+ 0: @f 0: GPU memory usage: used = 2908.625000 MB, free = 13219.375000 MB, total = 16128.000000 MB
+
+
+script:
+#BSUB -nnodes 8
+#BSUB -alloc_flags gpumps  # gpu multiple MPI process per GPU
+jsrun -n16 -r2 -a6 -c6 -g3 -d packed -l GPU-CPU ./bin/xspecfem3D
+output:
+ Estimated total run time in seconds =  1.87212389195337892
+ Total elapsed time in seconds =  1.97770157083868980
+memory:
+ 0: @f 0: GPU memory usage: used = 2908.562500 MB, free = 13219.437500 MB, total = 16128.000000 MB
+
+- 4 MPI processes per GPU:
+
+script:
+#BSUB -nnodes 4
+#BSUB -alloc_flags gpumps  # gpu multiple MPI process per GPU
+jsrun -n24 -r6 -g1 -a4 -c4 ./bin/xspecfem3D
+output:
+ Estimated total run time in seconds =  3.60231618303805590
+ Total elapsed time in seconds =  3.67345442599616945
+memory:
+ 0: @f 0: GPU memory usage: used = 5768.562500 MB, free = 10359.437500 MB, total = 16128.000000 MB
+
+
+- 6 MPI processes per GPU:
+
+script:
+#BSUB -nnodes 3
+#BSUB -alloc_flags gpumps  # gpu multiple MPI process per GPU
+jsrun -n16 -g1 -a6 -c6 ./bin/xspecfem3D
+output:
+ Estimated total run time in seconds =  5.34660654002800584
+ Total elapsed time in seconds =  5.37804581387899816
+memory:
+ 0: @f 0: GPU memory usage: used = 8640.562500 MB, free = 7487.437500 MB, total = 16128.000000 MB
+
+
+- 8 MPI processes per GPU:
+
+script:
+#BSUB -nnodes 2
+#BSUB -alloc_flags gpumps  # gpu multiple MPI process per GPU
+jsrun -n12 -r6 -g1 -a8 -c7 ./bin/xspecfem3D
+output:
+ Estimated total run time in seconds =  7.11698870500549674
+ Total elapsed time in seconds =  7.17463160911574960
+memory:
+ 0: @f 0: GPU memory usage: used = 11504.562500 MB, free = 4623.437500 MB, total = 16128.000000 MB
+
+
+
+## data points
+#mpi-process-per-gpu #total-run-time
+1	1.08088737691286951
+2 	1.91156399506144226
+4	3.67345442599616945
+6       5.37804581387899816
+8   	7.17463160911574960
+
+
+

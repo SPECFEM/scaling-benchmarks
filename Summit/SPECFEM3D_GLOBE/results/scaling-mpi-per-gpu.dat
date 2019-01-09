@@ -1,0 +1,14 @@
+## Summit - scaling data points
+#
+# CPUstrong96, 96 mpi processes total
+# NEX 256
+# 300 time steps
+# (Jan 2019)
+#
+#mpi-process-per-gpu #total-run-time
+1       1.08088737691286951
+2       1.91156399506144226
+4       3.67345442599616945
+6       5.37804581387899816
+8       7.17463160911574960
+
