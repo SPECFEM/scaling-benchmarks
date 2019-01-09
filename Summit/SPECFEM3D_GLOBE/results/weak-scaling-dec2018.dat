@@ -1,0 +1,11 @@
+# weak scaling
+# Wenjie Lei, Dec 2018
+
+#nproc	#nex_xi #elem_per_slice #time_per_timestep_per_elem
+96      256     47040		7.66e-8     # (result from strong scaling run CPUstrong96)
+216	288	31968		7.48e-8
+384	384	42552		7.20e-8
+600	480	42984		7.32e-8
+1536	640	37825		7.61e-8
+2400	800	47700		7.98e-8
+

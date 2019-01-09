@@ -1,0 +1,11 @@
+# strong scaling benchmark - Summit
+# Ridvan Orsvuran, Jan 2019
+# for NEX 512
+#nproc #nproc_xi  	# avg time per time step (s)
+6	1	 	-                               #(not enough GPU memory, simulation needs ~ 16GB)
+24	2		- 				#(failed)
+96	4		0.020275			
+384	8		0.005388			
+1535	16		0.001892			
+6144	32		0.001175
+
