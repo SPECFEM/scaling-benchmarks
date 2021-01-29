@@ -1,0 +1,20 @@
+# strong scaling
+#
+# Frontera 
+# Nov. 23, 2020
+#
+#nodes  #nproc  #nex_xi #elem_per_slice #total time  -> time_per_timestep_per_elem = total_time / 300 / elem_per_slice
+#2       24      256     188160          474.284482282586
+
+# 48 cores-per-node
+2       96      256     47040           176.788225409575
+8       384     256     11760           45.1629759455100
+32      1536    256     2940            11.9457483720034
+128	6144	256	735		3.39151705568656
+
+# from tmp_strong.dat
+#24 1.58095 0.0730833 474.284482282586 ##./RUN/CPUstrong24/OUTPUT_FILES/output_solver.txt-
+#96 0.589294 0.0182708 176.788225409575 ##./RUN/CPUstrong96/OUTPUT_FILES/output_solver.txt-
+#384 0.150543 0.00456771 45.1629759455100 ##./RUN/CPUstrong384/OUTPUT_FILES/output_solver.txt-
+#1536 0.0398192 0.00114193 11.9457483720034 ##./RUN/CPUstrong1536/OUTPUT_FILES/output_solver.txt-
+

@@ -1,0 +1,24 @@
+# weak scaling
+#
+# Frontera 
+# Nov. 23, 2020
+#
+#nodes  #nproc  #nex_xi #elem_per_slice #total time  -> time_per_timestep_per_elem = total_time / 300 / elem_per_slice
+#1       24      128     38464           111.373443631455
+
+# 48 cores-per-node
+2       96      256     47040           176.558749153279
+8       384     384     42552           153.763924910687
+#16      864     576     54180           215.351388461888   # ntasks-per-node=54
+32      1536    640     37825           135.759773090249
+#64	3456	768	30464		124.705156211043    # ntasks-per-node=54
+128	6144	1024	40640		146.254489035578
+
+
+# from tmp_weak.dat
+#24 0.371245 0.0458333 111.373443631455 ##./RUN/CPUweak24/OUTPUT_FILES/output_solver.txt-
+#96 0.588529 0.0114583 176.558749153279 ##./RUN/CPUweak96/OUTPUT_FILES/output_solver.txt-
+#384 0.512546 0.00286458 153.763924910687 ##./RUN/CPUweak384/OUTPUT_FILES/output_solver.txt-
+#864 0.717838 0.00127315 215.351388461888 ##./RUN/CPUweak864/OUTPUT_FILES/output_solver.txt-
+#1536 0.452533 0.000716146 135.759773090249 ##./RUN/CPUweak1536/OUTPUT_FILES/output_solver.txt-
+
