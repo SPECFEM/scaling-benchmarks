@@ -20,16 +20,19 @@ set style line 2 lt 2 lw 1.8 pt 7 pointinterval -1 pointsize 1.2
 set pointintervalbox 2
 
 set logscale x 10
+set logscale x2 10
 set logscale y 10
 
-set xlabel "Number of GPUs" 
+set xlabel "Number of nodes" 
+set x2label "Number of GPUs"
+
 set ylabel "Average run time per time step (s)" 
 
 # ideal scaling
 # from first run
-f(x) = 0.0121 * 24 * 1 / x  
+f(x) = 0.0121 * 24 * 1 / x / 6
 # from NEX512 run
-g(x) = 0.020275 * 96 * 1 / x
+g(x) = 0.020275 * 96 * 1 / x / 6
 
 # NEX 512 is about a factor 6.85 more heavy than NEX 256:
 #
@@ -39,6 +42,20 @@ g(x) = 0.020275 * 96 * 1 / x
 
 set datafile missing "-"
 
-plot [10:10000] 'strong-scaling-dec2018.dat' u 1:3 w lp ls 1 t 'Summit - NEX 256','strong-scaling-jan2019.nex512.dat' u 1:3 w lp ls 2 t 'Summit - NEX 512',f(x) lt 0 t 'ideal', g(x) lt 0 t ''
+set xtics nomirror
+set x2tics
+
+set ytics nomirror
+
+#set xrange[10:10000]
+set xrange[1:2200]
+set x2range[1:2200]
+
+set grid
+
+plot 'strong-scaling-dec2018.dat' u 1:4:x2tic(2):xtic(1) w lp ls 1 t 'Summit - NEX 256', \
+     'strong-scaling-jan2019.nex512.dat' u 1:4:x2tic(2):xtic(1) w lp ls 2 t 'Summit - NEX 512', \
+      f(x) lt 0 t 'ideal', \
+      g(x) lt 0 t ''
 
 

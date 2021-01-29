@@ -18,7 +18,7 @@ set ylabel "Scaling efficiency (%)"
 set y2label "Number of grid elements per slice"
 set y2tics
 
-set yrange[75:105]
+set yrange[20:105]
 set y2range [ 0.00000 : 100000 ] 
 
 set xtics nomirror
@@ -38,5 +38,5 @@ d0 = 7.20e-8 * N
 # ideal: 100 percent
 d(x) = 100. / ( x*N / d0 )
 
-plot [50:5000] 'weak-scaling-dec2018.dat' u 1:(d($4)) w lp ls 1 t 'Summit',100.0 lt 0 t 'ideal','' u 1:3 w boxes ls 2 axes x1y2 t 'elem per slice'
+plot [50:8000] 'weak-scaling-dec2018.dat' u 1:(d($4)) w lp ls 1 t 'Summit',100.0 lt 0 t 'ideal','' u 1:3 w boxes ls 2 axes x1y2 t 'elem per slice'
 

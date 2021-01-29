@@ -1,0 +1,33 @@
+# strong scaling benchmark - Summit
+# daniel, Jan 2019
+# for NEX 512
+# CPU only
+#
+# 96 procs, 6 nodes, 16 ppn
+# Total elapsed time in seconds =  1335.07881897606421
+# 96 procs, 3 nodes, 32 ppn
+# .. fails after "  fused array done"
+#
+# 384 procs, 16 nodes, 24 proc-per-node (ppn)
+# Total elapsed time in seconds =  361.679480032995343
+# 384 procs, 12 nodes, 32 ppn
+# Total elapsed time in seconds =  356.048055576975457
+#
+# 1536 procs, 48 nodes, 32 ppn
+# Total elapsed time in seconds =  86.8447252999758348
+#
+# 6144 procs, 192 nodes, 32 ppn
+# Total elapsed time in seconds =  25.3724069439922459
+#
+# 24576 procs, 768 nodes, 32 ppn
+# Total elapsed time in seconds =  6.70958844595588744
+#
+# -> about a factor 43.8 slower than GPU node
+#
+#nodes 	#procs	#time (300 timesteps)
+#3	96	1335.07881897606421  (runs on 6 nodes, but not on 3; 3 nodes would be on an ideal scaling curve)
+3       96      1334.04721626907121  # requires ~ 10GB per process, summit node limit 256GB per chip -> 2 x 256GB per node; use packed
+12	384	356.048055576975457
+48	1536	86.8447252999758348
+192	6144	25.3724069439922459
+768	24576	6.70958844595588744

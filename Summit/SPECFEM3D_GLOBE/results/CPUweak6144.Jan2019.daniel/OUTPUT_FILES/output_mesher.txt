@@ -1,0 +1,1690 @@
+ 
+ ****************************
+ *** Specfem3D MPI Mesher ***
+ ****************************
+ 
+ Version: 7.0.2
+ 
+ 
+ There are  6144  MPI processes
+ Processes are numbered from 0 to  6143
+ 
+ There are  1024  elements along xi in each chunk
+ There are  1024  elements along eta in each chunk
+ 
+ There are  32  slices along xi in each chunk
+ There are  32  slices along eta in each chunk
+ There is a total of  1024  slices in each chunk
+ There are  6  chunks in the global mesh
+ There is a total of  6144  slices in the global mesh
+ 
+ NGLLX =  5
+ NGLLY =  5
+ NGLLZ =  5
+ 
+ Shape functions defined by NGNOD =  27  control nodes
+ Surface shape functions defined by NGNOD2D =  9  control nodes
+ 
+ model: 1D_transversely_isotropic_prem
+   incorporating the oceans using equivalent load
+   incorporating ellipticity
+   incorporating surface topography
+   incorporating self-gravitation (Cowling approximation)
+   incorporating rotation
+   incorporating attenuation using  3  standard linear solids
+ 
+   no 3-D lateral variations
+   no heterogeneities in the mantle
+   no crustal variations
+   using unmodified 1D crustal model with two layers
+   incorporating anisotropy
+   no inner-core anisotropy
+   no general mantle anisotropy
+ 
+ Reference radius of the Earth used is  6371.00000000000000  km
+ 
+ Central cube is at a radius of  985.000000000000000  km
+ creating global slice addressing
+ 
+ 
+ incorporating topography
+   topography/bathymetry: min/max =  -7747 5507
+ 
+ additional mesh optimizations
+ 
+ moho:
+   no element stretching for 3-D moho surface
+ 
+ internal topography 410/660:
+   no element stretching for 3-D internal surfaces
+ 
+ 
+ Radial Meshing parameters:
+   CHUNK WIDTH XI/ETA = 90.0000000000000000 / 90.0000000000000000
+   NEX XI/ETA = 1024 / 1024
+ 
+   NER_CRUST:                3
+   NER_80_MOHO:              6
+   NER_220_80:               8
+   NER_400_220:              13
+   NER_600_400:              13
+   NER_670_600:              4
+   NER_771_670:              6
+   NER_TOPDDOUBLEPRIME_771:  106
+   NER_CMB_TOPDDOUBLEPRIME:  7
+   NER_OUTER_CORE:           116
+   NER_TOP_CENTRAL_CUBE_ICB: 12
+   SUPPRESS_CRUSTAL_MESH:    F
+ 
+   R_CENTRAL_CUBE =  985.0000000  km
+ 
+ Mesh resolution:
+   DT =  0.475000000000000006E-01
+   Minimum period =  4.25000000000000000  (s)
+ 
+   MIN_ATTENUATION_PERIOD =  4
+   MAX_ATTENUATION_PERIOD =  243
+ 
+ 
+ *******************************************
+ creating mesh in region  1
+ this region is the crust and mantle
+ *******************************************
+ 
+ 
+ first pass
+ 
+   ...allocating arrays 
+ 
+   ...setting up layers 
+ 
+   ...creating mesh elements 
+   creating layer  1 out of  11
+      9.1%    current clock (NOT elapsed) time is: 06h 11min 04sec
+   creating layer  2 out of  11
+     18.2%    current clock (NOT elapsed) time is: 06h 11min 04sec
+   creating layer  3 out of  11
+     27.3%    current clock (NOT elapsed) time is: 06h 11min 04sec
+   creating layer  4 out of  11
+     36.4%    current clock (NOT elapsed) time is: 06h 11min 04sec
+   creating layer  5 out of  11
+     45.5%    current clock (NOT elapsed) time is: 06h 11min 04sec
+   creating layer  6 out of  11
+     54.5%    current clock (NOT elapsed) time is: 06h 11min 04sec
+   creating layer  7 out of  11
+     63.6%    current clock (NOT elapsed) time is: 06h 11min 04sec
+   creating layer  8 out of  11
+     72.7%    current clock (NOT elapsed) time is: 06h 11min 04sec
+   creating layer  9 out of  11
+     81.8%    current clock (NOT elapsed) time is: 06h 11min 04sec
+   creating layer  10 out of  11
+     90.9%    current clock (NOT elapsed) time is: 06h 11min 04sec
+   creating layer  11 out of  11
+    100.0%    current clock (NOT elapsed) time is: 06h 11min 04sec
+ 
+ 
+   ...creating global addressing
+ 
+   ...creating MPI buffers
+ 
+ second pass
+ 
+   ...allocating arrays 
+ 
+   ...setting up layers 
+ 
+   ...creating mesh elements 
+   creating layer  1 out of  11
+      9.1%    current clock (NOT elapsed) time is: 06h 11min 08sec
+   creating layer  2 out of  11
+     18.2%    current clock (NOT elapsed) time is: 06h 11min 08sec
+   creating layer  3 out of  11
+     27.3%    current clock (NOT elapsed) time is: 06h 11min 08sec
+   creating layer  4 out of  11
+     36.4%    current clock (NOT elapsed) time is: 06h 11min 09sec
+   creating layer  5 out of  11
+     45.5%    current clock (NOT elapsed) time is: 06h 11min 11sec
+   creating layer  6 out of  11
+     54.5%    current clock (NOT elapsed) time is: 06h 11min 11sec
+   creating layer  7 out of  11
+     63.6%    current clock (NOT elapsed) time is: 06h 11min 12sec
+   creating layer  8 out of  11
+     72.7%    current clock (NOT elapsed) time is: 06h 11min 12sec
+   creating layer  9 out of  11
+     81.8%    current clock (NOT elapsed) time is: 06h 11min 13sec
+   creating layer  10 out of  11
+     90.9%    current clock (NOT elapsed) time is: 06h 11min 13sec
+   creating layer  11 out of  11
+    100.0%    current clock (NOT elapsed) time is: 06h 11min 13sec
+ 
+ 
+   ...fills global mesh points 
+ 
+   ...checking mesh resolution and time step
+ 
+ ----------------------------------
+   Verification of mesh parameters:
+ ----------------------------------
+   Region is crust/mantle
+ 
+   Max element edge size =  28.91493416  (km)
+   Min element edge size =  4.470931530  (km)
+   Max/min ratio =  6.467317581
+ 
+   Max Jacobian eigenvalue ratio =  0.9997040033
+   Min Jacobian eigenvalue ratio =  0.3058576211E-01
+ 
+   Minimum period resolved =  5.071633339  (s)
+   Minimum period resolved (empirical) =  4.250000000  (s)
+   Maximum suggested time step =  0.5150000006E-01  (s)
+ 
+   for DT :  0.4749999940E-01  (s)
+   Max stability for wave velocities =  0.5038982630
+ ----------------------------------
+ 
+ 
+   ...precomputing Jacobian
+ 
+   ...creating chunk buffers
+ 
+ ----- creating chunk buffers -----
+ 
+ There are  32  slices along xi in each chunk
+ There are  32  slices along eta in each chunk
+ There is a total of  1024  slices in each chunk
+ There are  6  chunks
+ There is a total of  6144  slices in all the chunks
+ 
+ There is a total of  384  messages to assemble faces between chunks
+ 
+ Generating message  1  for faces out of  384
+ Generating message  2  for faces out of  384
+ Generating message  3  for faces out of  384
+ Generating message  4  for faces out of  384
+ Generating message  5  for faces out of  384
+ Generating message  6  for faces out of  384
+ Generating message  7  for faces out of  384
+ Generating message  8  for faces out of  384
+ Generating message  9  for faces out of  384
+ Generating message  10  for faces out of  384
+ Generating message  11  for faces out of  384
+ Generating message  12  for faces out of  384
+ Generating message  13  for faces out of  384
+ Generating message  14  for faces out of  384
+ Generating message  15  for faces out of  384
+ Generating message  16  for faces out of  384
+ Generating message  17  for faces out of  384
+ Generating message  18  for faces out of  384
+ Generating message  19  for faces out of  384
+ Generating message  20  for faces out of  384
+ Generating message  21  for faces out of  384
+ Generating message  22  for faces out of  384
+ Generating message  23  for faces out of  384
+ Generating message  24  for faces out of  384
+ Generating message  25  for faces out of  384
+ Generating message  26  for faces out of  384
+ Generating message  27  for faces out of  384
+ Generating message  28  for faces out of  384
+ Generating message  29  for faces out of  384
+ Generating message  30  for faces out of  384
+ Generating message  31  for faces out of  384
+ Generating message  32  for faces out of  384
+ Generating message  33  for faces out of  384
+ Generating message  34  for faces out of  384
+ Generating message  35  for faces out of  384
+ Generating message  36  for faces out of  384
+ Generating message  37  for faces out of  384
+ Generating message  38  for faces out of  384
+ Generating message  39  for faces out of  384
+ Generating message  40  for faces out of  384
+ Generating message  41  for faces out of  384
+ Generating message  42  for faces out of  384
+ Generating message  43  for faces out of  384
+ Generating message  44  for faces out of  384
+ Generating message  45  for faces out of  384
+ Generating message  46  for faces out of  384
+ Generating message  47  for faces out of  384
+ Generating message  48  for faces out of  384
+ Generating message  49  for faces out of  384
+ Generating message  50  for faces out of  384
+ Generating message  51  for faces out of  384
+ Generating message  52  for faces out of  384
+ Generating message  53  for faces out of  384
+ Generating message  54  for faces out of  384
+ Generating message  55  for faces out of  384
+ Generating message  56  for faces out of  384
+ Generating message  57  for faces out of  384
+ Generating message  58  for faces out of  384
+ Generating message  59  for faces out of  384
+ Generating message  60  for faces out of  384
+ Generating message  61  for faces out of  384
+ Generating message  62  for faces out of  384
+ Generating message  63  for faces out of  384
+ Generating message  64  for faces out of  384
+ Generating message  65  for faces out of  384
+ Generating message  66  for faces out of  384
+ Generating message  67  for faces out of  384
+ Generating message  68  for faces out of  384
+ Generating message  69  for faces out of  384
+ Generating message  70  for faces out of  384
+ Generating message  71  for faces out of  384
+ Generating message  72  for faces out of  384
+ Generating message  73  for faces out of  384
+ Generating message  74  for faces out of  384
+ Generating message  75  for faces out of  384
+ Generating message  76  for faces out of  384
+ Generating message  77  for faces out of  384
+ Generating message  78  for faces out of  384
+ Generating message  79  for faces out of  384
+ Generating message  80  for faces out of  384
+ Generating message  81  for faces out of  384
+ Generating message  82  for faces out of  384
+ Generating message  83  for faces out of  384
+ Generating message  84  for faces out of  384
+ Generating message  85  for faces out of  384
+ Generating message  86  for faces out of  384
+ Generating message  87  for faces out of  384
+ Generating message  88  for faces out of  384
+ Generating message  89  for faces out of  384
+ Generating message  90  for faces out of  384
+ Generating message  91  for faces out of  384
+ Generating message  92  for faces out of  384
+ Generating message  93  for faces out of  384
+ Generating message  94  for faces out of  384
+ Generating message  95  for faces out of  384
+ Generating message  96  for faces out of  384
+ Generating message  97  for faces out of  384
+ Generating message  98  for faces out of  384
+ Generating message  99  for faces out of  384
+ Generating message  100  for faces out of  384
+ Generating message  101  for faces out of  384
+ Generating message  102  for faces out of  384
+ Generating message  103  for faces out of  384
+ Generating message  104  for faces out of  384
+ Generating message  105  for faces out of  384
+ Generating message  106  for faces out of  384
+ Generating message  107  for faces out of  384
+ Generating message  108  for faces out of  384
+ Generating message  109  for faces out of  384
+ Generating message  110  for faces out of  384
+ Generating message  111  for faces out of  384
+ Generating message  112  for faces out of  384
+ Generating message  113  for faces out of  384
+ Generating message  114  for faces out of  384
+ Generating message  115  for faces out of  384
+ Generating message  116  for faces out of  384
+ Generating message  117  for faces out of  384
+ Generating message  118  for faces out of  384
+ Generating message  119  for faces out of  384
+ Generating message  120  for faces out of  384
+ Generating message  121  for faces out of  384
+ Generating message  122  for faces out of  384
+ Generating message  123  for faces out of  384
+ Generating message  124  for faces out of  384
+ Generating message  125  for faces out of  384
+ Generating message  126  for faces out of  384
+ Generating message  127  for faces out of  384
+ Generating message  128  for faces out of  384
+ Generating message  129  for faces out of  384
+ Generating message  130  for faces out of  384
+ Generating message  131  for faces out of  384
+ Generating message  132  for faces out of  384
+ Generating message  133  for faces out of  384
+ Generating message  134  for faces out of  384
+ Generating message  135  for faces out of  384
+ Generating message  136  for faces out of  384
+ Generating message  137  for faces out of  384
+ Generating message  138  for faces out of  384
+ Generating message  139  for faces out of  384
+ Generating message  140  for faces out of  384
+ Generating message  141  for faces out of  384
+ Generating message  142  for faces out of  384
+ Generating message  143  for faces out of  384
+ Generating message  144  for faces out of  384
+ Generating message  145  for faces out of  384
+ Generating message  146  for faces out of  384
+ Generating message  147  for faces out of  384
+ Generating message  148  for faces out of  384
+ Generating message  149  for faces out of  384
+ Generating message  150  for faces out of  384
+ Generating message  151  for faces out of  384
+ Generating message  152  for faces out of  384
+ Generating message  153  for faces out of  384
+ Generating message  154  for faces out of  384
+ Generating message  155  for faces out of  384
+ Generating message  156  for faces out of  384
+ Generating message  157  for faces out of  384
+ Generating message  158  for faces out of  384
+ Generating message  159  for faces out of  384
+ Generating message  160  for faces out of  384
+ Generating message  161  for faces out of  384
+ Generating message  162  for faces out of  384
+ Generating message  163  for faces out of  384
+ Generating message  164  for faces out of  384
+ Generating message  165  for faces out of  384
+ Generating message  166  for faces out of  384
+ Generating message  167  for faces out of  384
+ Generating message  168  for faces out of  384
+ Generating message  169  for faces out of  384
+ Generating message  170  for faces out of  384
+ Generating message  171  for faces out of  384
+ Generating message  172  for faces out of  384
+ Generating message  173  for faces out of  384
+ Generating message  174  for faces out of  384
+ Generating message  175  for faces out of  384
+ Generating message  176  for faces out of  384
+ Generating message  177  for faces out of  384
+ Generating message  178  for faces out of  384
+ Generating message  179  for faces out of  384
+ Generating message  180  for faces out of  384
+ Generating message  181  for faces out of  384
+ Generating message  182  for faces out of  384
+ Generating message  183  for faces out of  384
+ Generating message  184  for faces out of  384
+ Generating message  185  for faces out of  384
+ Generating message  186  for faces out of  384
+ Generating message  187  for faces out of  384
+ Generating message  188  for faces out of  384
+ Generating message  189  for faces out of  384
+ Generating message  190  for faces out of  384
+ Generating message  191  for faces out of  384
+ Generating message  192  for faces out of  384
+ Generating message  193  for faces out of  384
+ Generating message  194  for faces out of  384
+ Generating message  195  for faces out of  384
+ Generating message  196  for faces out of  384
+ Generating message  197  for faces out of  384
+ Generating message  198  for faces out of  384
+ Generating message  199  for faces out of  384
+ Generating message  200  for faces out of  384
+ Generating message  201  for faces out of  384
+ Generating message  202  for faces out of  384
+ Generating message  203  for faces out of  384
+ Generating message  204  for faces out of  384
+ Generating message  205  for faces out of  384
+ Generating message  206  for faces out of  384
+ Generating message  207  for faces out of  384
+ Generating message  208  for faces out of  384
+ Generating message  209  for faces out of  384
+ Generating message  210  for faces out of  384
+ Generating message  211  for faces out of  384
+ Generating message  212  for faces out of  384
+ Generating message  213  for faces out of  384
+ Generating message  214  for faces out of  384
+ Generating message  215  for faces out of  384
+ Generating message  216  for faces out of  384
+ Generating message  217  for faces out of  384
+ Generating message  218  for faces out of  384
+ Generating message  219  for faces out of  384
+ Generating message  220  for faces out of  384
+ Generating message  221  for faces out of  384
+ Generating message  222  for faces out of  384
+ Generating message  223  for faces out of  384
+ Generating message  224  for faces out of  384
+ Generating message  225  for faces out of  384
+ Generating message  226  for faces out of  384
+ Generating message  227  for faces out of  384
+ Generating message  228  for faces out of  384
+ Generating message  229  for faces out of  384
+ Generating message  230  for faces out of  384
+ Generating message  231  for faces out of  384
+ Generating message  232  for faces out of  384
+ Generating message  233  for faces out of  384
+ Generating message  234  for faces out of  384
+ Generating message  235  for faces out of  384
+ Generating message  236  for faces out of  384
+ Generating message  237  for faces out of  384
+ Generating message  238  for faces out of  384
+ Generating message  239  for faces out of  384
+ Generating message  240  for faces out of  384
+ Generating message  241  for faces out of  384
+ Generating message  242  for faces out of  384
+ Generating message  243  for faces out of  384
+ Generating message  244  for faces out of  384
+ Generating message  245  for faces out of  384
+ Generating message  246  for faces out of  384
+ Generating message  247  for faces out of  384
+ Generating message  248  for faces out of  384
+ Generating message  249  for faces out of  384
+ Generating message  250  for faces out of  384
+ Generating message  251  for faces out of  384
+ Generating message  252  for faces out of  384
+ Generating message  253  for faces out of  384
+ Generating message  254  for faces out of  384
+ Generating message  255  for faces out of  384
+ Generating message  256  for faces out of  384
+ Generating message  257  for faces out of  384
+ Generating message  258  for faces out of  384
+ Generating message  259  for faces out of  384
+ Generating message  260  for faces out of  384
+ Generating message  261  for faces out of  384
+ Generating message  262  for faces out of  384
+ Generating message  263  for faces out of  384
+ Generating message  264  for faces out of  384
+ Generating message  265  for faces out of  384
+ Generating message  266  for faces out of  384
+ Generating message  267  for faces out of  384
+ Generating message  268  for faces out of  384
+ Generating message  269  for faces out of  384
+ Generating message  270  for faces out of  384
+ Generating message  271  for faces out of  384
+ Generating message  272  for faces out of  384
+ Generating message  273  for faces out of  384
+ Generating message  274  for faces out of  384
+ Generating message  275  for faces out of  384
+ Generating message  276  for faces out of  384
+ Generating message  277  for faces out of  384
+ Generating message  278  for faces out of  384
+ Generating message  279  for faces out of  384
+ Generating message  280  for faces out of  384
+ Generating message  281  for faces out of  384
+ Generating message  282  for faces out of  384
+ Generating message  283  for faces out of  384
+ Generating message  284  for faces out of  384
+ Generating message  285  for faces out of  384
+ Generating message  286  for faces out of  384
+ Generating message  287  for faces out of  384
+ Generating message  288  for faces out of  384
+ Generating message  289  for faces out of  384
+ Generating message  290  for faces out of  384
+ Generating message  291  for faces out of  384
+ Generating message  292  for faces out of  384
+ Generating message  293  for faces out of  384
+ Generating message  294  for faces out of  384
+ Generating message  295  for faces out of  384
+ Generating message  296  for faces out of  384
+ Generating message  297  for faces out of  384
+ Generating message  298  for faces out of  384
+ Generating message  299  for faces out of  384
+ Generating message  300  for faces out of  384
+ Generating message  301  for faces out of  384
+ Generating message  302  for faces out of  384
+ Generating message  303  for faces out of  384
+ Generating message  304  for faces out of  384
+ Generating message  305  for faces out of  384
+ Generating message  306  for faces out of  384
+ Generating message  307  for faces out of  384
+ Generating message  308  for faces out of  384
+ Generating message  309  for faces out of  384
+ Generating message  310  for faces out of  384
+ Generating message  311  for faces out of  384
+ Generating message  312  for faces out of  384
+ Generating message  313  for faces out of  384
+ Generating message  314  for faces out of  384
+ Generating message  315  for faces out of  384
+ Generating message  316  for faces out of  384
+ Generating message  317  for faces out of  384
+ Generating message  318  for faces out of  384
+ Generating message  319  for faces out of  384
+ Generating message  320  for faces out of  384
+ Generating message  321  for faces out of  384
+ Generating message  322  for faces out of  384
+ Generating message  323  for faces out of  384
+ Generating message  324  for faces out of  384
+ Generating message  325  for faces out of  384
+ Generating message  326  for faces out of  384
+ Generating message  327  for faces out of  384
+ Generating message  328  for faces out of  384
+ Generating message  329  for faces out of  384
+ Generating message  330  for faces out of  384
+ Generating message  331  for faces out of  384
+ Generating message  332  for faces out of  384
+ Generating message  333  for faces out of  384
+ Generating message  334  for faces out of  384
+ Generating message  335  for faces out of  384
+ Generating message  336  for faces out of  384
+ Generating message  337  for faces out of  384
+ Generating message  338  for faces out of  384
+ Generating message  339  for faces out of  384
+ Generating message  340  for faces out of  384
+ Generating message  341  for faces out of  384
+ Generating message  342  for faces out of  384
+ Generating message  343  for faces out of  384
+ Generating message  344  for faces out of  384
+ Generating message  345  for faces out of  384
+ Generating message  346  for faces out of  384
+ Generating message  347  for faces out of  384
+ Generating message  348  for faces out of  384
+ Generating message  349  for faces out of  384
+ Generating message  350  for faces out of  384
+ Generating message  351  for faces out of  384
+ Generating message  352  for faces out of  384
+ Generating message  353  for faces out of  384
+ Generating message  354  for faces out of  384
+ Generating message  355  for faces out of  384
+ Generating message  356  for faces out of  384
+ Generating message  357  for faces out of  384
+ Generating message  358  for faces out of  384
+ Generating message  359  for faces out of  384
+ Generating message  360  for faces out of  384
+ Generating message  361  for faces out of  384
+ Generating message  362  for faces out of  384
+ Generating message  363  for faces out of  384
+ Generating message  364  for faces out of  384
+ Generating message  365  for faces out of  384
+ Generating message  366  for faces out of  384
+ Generating message  367  for faces out of  384
+ Generating message  368  for faces out of  384
+ Generating message  369  for faces out of  384
+ Generating message  370  for faces out of  384
+ Generating message  371  for faces out of  384
+ Generating message  372  for faces out of  384
+ Generating message  373  for faces out of  384
+ Generating message  374  for faces out of  384
+ Generating message  375  for faces out of  384
+ Generating message  376  for faces out of  384
+ Generating message  377  for faces out of  384
+ Generating message  378  for faces out of  384
+ Generating message  379  for faces out of  384
+ Generating message  380  for faces out of  384
+ Generating message  381  for faces out of  384
+ Generating message  382  for faces out of  384
+ Generating message  383  for faces out of  384
+ Generating message  384  for faces out of  384
+ 
+ all the messages for chunk faces have the right size
+ 
+ Generating message  1  for corners out of  8
+ Generating message  2  for corners out of  8
+ Generating message  3  for corners out of  8
+ Generating message  4  for corners out of  8
+ Generating message  5  for corners out of  8
+ Generating message  6  for corners out of  8
+ Generating message  7  for corners out of  8
+ Generating message  8  for corners out of  8
+ 
+   ...preparing MPI interfaces
+ 
+ crust/mantle region:
+   #max of points in MPI buffers along xi npoin2D_xi =  36329
+   #max of array elements transferred npoin2D_xi*NDIM =  108987
+ 
+   #max of points in MPI buffers along eta npoin2D_eta =  36329
+   #max of array elements transferred npoin2D_eta*NDIM =  108987
+ 
+ crust mantle MPI:
+   maximum interfaces: 8
+   MPI addressing maximum interfaces: 8
+   MPI addressing : all interfaces okay
+ 
+   total MPI interface points :  909148584
+   unique MPI interface points:  876478464
+   maximum valence            :  3
+   total unique MPI interface points: 876478464
+ 
+ 
+   ...element inner/outer separation 
+ 
+ for overlapping of communications with calculations:
+ 
+ percentage of edge elements in crust/mantle  24.55357170 %
+ percentage of volume elements in crust/mantle  75.44642639 %
+ 
+ 
+   ...element mesh coloring 
+   mesh coloring:  F
+ 
+   ...creating mass matrix
+     updates mass matrix with ocean load
+ 
+   ...saving binary files
+ 
+    calculated top area:  12.5584229684322217
+ calculated bottom area:  3.74933401851382619
+ 
+ *******************************************
+ creating mesh in region  2
+ this region is the outer core
+ *******************************************
+ 
+ 
+ first pass
+ 
+   ...allocating arrays 
+ 
+   ...setting up layers 
+ 
+   ...creating mesh elements 
+   creating layer  1 out of  2
+     50.0%    current clock (NOT elapsed) time is: 06h 12min 15sec
+   creating layer  2 out of  2
+    100.0%    current clock (NOT elapsed) time is: 06h 12min 15sec
+ 
+ 
+   ...creating global addressing
+ 
+   ...creating MPI buffers
+ 
+ second pass
+ 
+   ...allocating arrays 
+ 
+   ...setting up layers 
+ 
+   ...creating mesh elements 
+   creating layer  1 out of  2
+     50.0%    current clock (NOT elapsed) time is: 06h 12min 16sec
+   creating layer  2 out of  2
+    100.0%    current clock (NOT elapsed) time is: 06h 12min 16sec
+ 
+ 
+   ...fills global mesh points 
+ 
+   ...checking mesh resolution and time step
+ 
+ ----------------------------------
+   Verification of mesh parameters:
+ ----------------------------------
+   Region is outer core
+ 
+   Max element edge size =  30.54294586  (km)
+   Min element edge size =  9.720018387  (km)
+   Max/min ratio =  3.142272472
+ 
+   Max Jacobian eigenvalue ratio =  0.9995674491
+   Min Jacobian eigenvalue ratio =  0.1708375067
+ 
+   Minimum period resolved =  3.021185160  (s)
+   Minimum period resolved (empirical) =  4.250000000  (s)
+   Maximum suggested time step =  0.9700000286E-01  (s)
+ 
+   for DT :  0.4749999940E-01  (s)
+   Max stability for wave velocities =  0.2689769864
+ ----------------------------------
+ 
+ 
+   ...precomputing Jacobian
+ 
+   ...creating chunk buffers
+ 
+ ----- creating chunk buffers -----
+ 
+ There are  32  slices along xi in each chunk
+ There are  32  slices along eta in each chunk
+ There is a total of  1024  slices in each chunk
+ There are  6  chunks
+ There is a total of  6144  slices in all the chunks
+ 
+ There is a total of  384  messages to assemble faces between chunks
+ 
+ Generating message  1  for faces out of  384
+ Generating message  2  for faces out of  384
+ Generating message  3  for faces out of  384
+ Generating message  4  for faces out of  384
+ Generating message  5  for faces out of  384
+ Generating message  6  for faces out of  384
+ Generating message  7  for faces out of  384
+ Generating message  8  for faces out of  384
+ Generating message  9  for faces out of  384
+ Generating message  10  for faces out of  384
+ Generating message  11  for faces out of  384
+ Generating message  12  for faces out of  384
+ Generating message  13  for faces out of  384
+ Generating message  14  for faces out of  384
+ Generating message  15  for faces out of  384
+ Generating message  16  for faces out of  384
+ Generating message  17  for faces out of  384
+ Generating message  18  for faces out of  384
+ Generating message  19  for faces out of  384
+ Generating message  20  for faces out of  384
+ Generating message  21  for faces out of  384
+ Generating message  22  for faces out of  384
+ Generating message  23  for faces out of  384
+ Generating message  24  for faces out of  384
+ Generating message  25  for faces out of  384
+ Generating message  26  for faces out of  384
+ Generating message  27  for faces out of  384
+ Generating message  28  for faces out of  384
+ Generating message  29  for faces out of  384
+ Generating message  30  for faces out of  384
+ Generating message  31  for faces out of  384
+ Generating message  32  for faces out of  384
+ Generating message  33  for faces out of  384
+ Generating message  34  for faces out of  384
+ Generating message  35  for faces out of  384
+ Generating message  36  for faces out of  384
+ Generating message  37  for faces out of  384
+ Generating message  38  for faces out of  384
+ Generating message  39  for faces out of  384
+ Generating message  40  for faces out of  384
+ Generating message  41  for faces out of  384
+ Generating message  42  for faces out of  384
+ Generating message  43  for faces out of  384
+ Generating message  44  for faces out of  384
+ Generating message  45  for faces out of  384
+ Generating message  46  for faces out of  384
+ Generating message  47  for faces out of  384
+ Generating message  48  for faces out of  384
+ Generating message  49  for faces out of  384
+ Generating message  50  for faces out of  384
+ Generating message  51  for faces out of  384
+ Generating message  52  for faces out of  384
+ Generating message  53  for faces out of  384
+ Generating message  54  for faces out of  384
+ Generating message  55  for faces out of  384
+ Generating message  56  for faces out of  384
+ Generating message  57  for faces out of  384
+ Generating message  58  for faces out of  384
+ Generating message  59  for faces out of  384
+ Generating message  60  for faces out of  384
+ Generating message  61  for faces out of  384
+ Generating message  62  for faces out of  384
+ Generating message  63  for faces out of  384
+ Generating message  64  for faces out of  384
+ Generating message  65  for faces out of  384
+ Generating message  66  for faces out of  384
+ Generating message  67  for faces out of  384
+ Generating message  68  for faces out of  384
+ Generating message  69  for faces out of  384
+ Generating message  70  for faces out of  384
+ Generating message  71  for faces out of  384
+ Generating message  72  for faces out of  384
+ Generating message  73  for faces out of  384
+ Generating message  74  for faces out of  384
+ Generating message  75  for faces out of  384
+ Generating message  76  for faces out of  384
+ Generating message  77  for faces out of  384
+ Generating message  78  for faces out of  384
+ Generating message  79  for faces out of  384
+ Generating message  80  for faces out of  384
+ Generating message  81  for faces out of  384
+ Generating message  82  for faces out of  384
+ Generating message  83  for faces out of  384
+ Generating message  84  for faces out of  384
+ Generating message  85  for faces out of  384
+ Generating message  86  for faces out of  384
+ Generating message  87  for faces out of  384
+ Generating message  88  for faces out of  384
+ Generating message  89  for faces out of  384
+ Generating message  90  for faces out of  384
+ Generating message  91  for faces out of  384
+ Generating message  92  for faces out of  384
+ Generating message  93  for faces out of  384
+ Generating message  94  for faces out of  384
+ Generating message  95  for faces out of  384
+ Generating message  96  for faces out of  384
+ Generating message  97  for faces out of  384
+ Generating message  98  for faces out of  384
+ Generating message  99  for faces out of  384
+ Generating message  100  for faces out of  384
+ Generating message  101  for faces out of  384
+ Generating message  102  for faces out of  384
+ Generating message  103  for faces out of  384
+ Generating message  104  for faces out of  384
+ Generating message  105  for faces out of  384
+ Generating message  106  for faces out of  384
+ Generating message  107  for faces out of  384
+ Generating message  108  for faces out of  384
+ Generating message  109  for faces out of  384
+ Generating message  110  for faces out of  384
+ Generating message  111  for faces out of  384
+ Generating message  112  for faces out of  384
+ Generating message  113  for faces out of  384
+ Generating message  114  for faces out of  384
+ Generating message  115  for faces out of  384
+ Generating message  116  for faces out of  384
+ Generating message  117  for faces out of  384
+ Generating message  118  for faces out of  384
+ Generating message  119  for faces out of  384
+ Generating message  120  for faces out of  384
+ Generating message  121  for faces out of  384
+ Generating message  122  for faces out of  384
+ Generating message  123  for faces out of  384
+ Generating message  124  for faces out of  384
+ Generating message  125  for faces out of  384
+ Generating message  126  for faces out of  384
+ Generating message  127  for faces out of  384
+ Generating message  128  for faces out of  384
+ Generating message  129  for faces out of  384
+ Generating message  130  for faces out of  384
+ Generating message  131  for faces out of  384
+ Generating message  132  for faces out of  384
+ Generating message  133  for faces out of  384
+ Generating message  134  for faces out of  384
+ Generating message  135  for faces out of  384
+ Generating message  136  for faces out of  384
+ Generating message  137  for faces out of  384
+ Generating message  138  for faces out of  384
+ Generating message  139  for faces out of  384
+ Generating message  140  for faces out of  384
+ Generating message  141  for faces out of  384
+ Generating message  142  for faces out of  384
+ Generating message  143  for faces out of  384
+ Generating message  144  for faces out of  384
+ Generating message  145  for faces out of  384
+ Generating message  146  for faces out of  384
+ Generating message  147  for faces out of  384
+ Generating message  148  for faces out of  384
+ Generating message  149  for faces out of  384
+ Generating message  150  for faces out of  384
+ Generating message  151  for faces out of  384
+ Generating message  152  for faces out of  384
+ Generating message  153  for faces out of  384
+ Generating message  154  for faces out of  384
+ Generating message  155  for faces out of  384
+ Generating message  156  for faces out of  384
+ Generating message  157  for faces out of  384
+ Generating message  158  for faces out of  384
+ Generating message  159  for faces out of  384
+ Generating message  160  for faces out of  384
+ Generating message  161  for faces out of  384
+ Generating message  162  for faces out of  384
+ Generating message  163  for faces out of  384
+ Generating message  164  for faces out of  384
+ Generating message  165  for faces out of  384
+ Generating message  166  for faces out of  384
+ Generating message  167  for faces out of  384
+ Generating message  168  for faces out of  384
+ Generating message  169  for faces out of  384
+ Generating message  170  for faces out of  384
+ Generating message  171  for faces out of  384
+ Generating message  172  for faces out of  384
+ Generating message  173  for faces out of  384
+ Generating message  174  for faces out of  384
+ Generating message  175  for faces out of  384
+ Generating message  176  for faces out of  384
+ Generating message  177  for faces out of  384
+ Generating message  178  for faces out of  384
+ Generating message  179  for faces out of  384
+ Generating message  180  for faces out of  384
+ Generating message  181  for faces out of  384
+ Generating message  182  for faces out of  384
+ Generating message  183  for faces out of  384
+ Generating message  184  for faces out of  384
+ Generating message  185  for faces out of  384
+ Generating message  186  for faces out of  384
+ Generating message  187  for faces out of  384
+ Generating message  188  for faces out of  384
+ Generating message  189  for faces out of  384
+ Generating message  190  for faces out of  384
+ Generating message  191  for faces out of  384
+ Generating message  192  for faces out of  384
+ Generating message  193  for faces out of  384
+ Generating message  194  for faces out of  384
+ Generating message  195  for faces out of  384
+ Generating message  196  for faces out of  384
+ Generating message  197  for faces out of  384
+ Generating message  198  for faces out of  384
+ Generating message  199  for faces out of  384
+ Generating message  200  for faces out of  384
+ Generating message  201  for faces out of  384
+ Generating message  202  for faces out of  384
+ Generating message  203  for faces out of  384
+ Generating message  204  for faces out of  384
+ Generating message  205  for faces out of  384
+ Generating message  206  for faces out of  384
+ Generating message  207  for faces out of  384
+ Generating message  208  for faces out of  384
+ Generating message  209  for faces out of  384
+ Generating message  210  for faces out of  384
+ Generating message  211  for faces out of  384
+ Generating message  212  for faces out of  384
+ Generating message  213  for faces out of  384
+ Generating message  214  for faces out of  384
+ Generating message  215  for faces out of  384
+ Generating message  216  for faces out of  384
+ Generating message  217  for faces out of  384
+ Generating message  218  for faces out of  384
+ Generating message  219  for faces out of  384
+ Generating message  220  for faces out of  384
+ Generating message  221  for faces out of  384
+ Generating message  222  for faces out of  384
+ Generating message  223  for faces out of  384
+ Generating message  224  for faces out of  384
+ Generating message  225  for faces out of  384
+ Generating message  226  for faces out of  384
+ Generating message  227  for faces out of  384
+ Generating message  228  for faces out of  384
+ Generating message  229  for faces out of  384
+ Generating message  230  for faces out of  384
+ Generating message  231  for faces out of  384
+ Generating message  232  for faces out of  384
+ Generating message  233  for faces out of  384
+ Generating message  234  for faces out of  384
+ Generating message  235  for faces out of  384
+ Generating message  236  for faces out of  384
+ Generating message  237  for faces out of  384
+ Generating message  238  for faces out of  384
+ Generating message  239  for faces out of  384
+ Generating message  240  for faces out of  384
+ Generating message  241  for faces out of  384
+ Generating message  242  for faces out of  384
+ Generating message  243  for faces out of  384
+ Generating message  244  for faces out of  384
+ Generating message  245  for faces out of  384
+ Generating message  246  for faces out of  384
+ Generating message  247  for faces out of  384
+ Generating message  248  for faces out of  384
+ Generating message  249  for faces out of  384
+ Generating message  250  for faces out of  384
+ Generating message  251  for faces out of  384
+ Generating message  252  for faces out of  384
+ Generating message  253  for faces out of  384
+ Generating message  254  for faces out of  384
+ Generating message  255  for faces out of  384
+ Generating message  256  for faces out of  384
+ Generating message  257  for faces out of  384
+ Generating message  258  for faces out of  384
+ Generating message  259  for faces out of  384
+ Generating message  260  for faces out of  384
+ Generating message  261  for faces out of  384
+ Generating message  262  for faces out of  384
+ Generating message  263  for faces out of  384
+ Generating message  264  for faces out of  384
+ Generating message  265  for faces out of  384
+ Generating message  266  for faces out of  384
+ Generating message  267  for faces out of  384
+ Generating message  268  for faces out of  384
+ Generating message  269  for faces out of  384
+ Generating message  270  for faces out of  384
+ Generating message  271  for faces out of  384
+ Generating message  272  for faces out of  384
+ Generating message  273  for faces out of  384
+ Generating message  274  for faces out of  384
+ Generating message  275  for faces out of  384
+ Generating message  276  for faces out of  384
+ Generating message  277  for faces out of  384
+ Generating message  278  for faces out of  384
+ Generating message  279  for faces out of  384
+ Generating message  280  for faces out of  384
+ Generating message  281  for faces out of  384
+ Generating message  282  for faces out of  384
+ Generating message  283  for faces out of  384
+ Generating message  284  for faces out of  384
+ Generating message  285  for faces out of  384
+ Generating message  286  for faces out of  384
+ Generating message  287  for faces out of  384
+ Generating message  288  for faces out of  384
+ Generating message  289  for faces out of  384
+ Generating message  290  for faces out of  384
+ Generating message  291  for faces out of  384
+ Generating message  292  for faces out of  384
+ Generating message  293  for faces out of  384
+ Generating message  294  for faces out of  384
+ Generating message  295  for faces out of  384
+ Generating message  296  for faces out of  384
+ Generating message  297  for faces out of  384
+ Generating message  298  for faces out of  384
+ Generating message  299  for faces out of  384
+ Generating message  300  for faces out of  384
+ Generating message  301  for faces out of  384
+ Generating message  302  for faces out of  384
+ Generating message  303  for faces out of  384
+ Generating message  304  for faces out of  384
+ Generating message  305  for faces out of  384
+ Generating message  306  for faces out of  384
+ Generating message  307  for faces out of  384
+ Generating message  308  for faces out of  384
+ Generating message  309  for faces out of  384
+ Generating message  310  for faces out of  384
+ Generating message  311  for faces out of  384
+ Generating message  312  for faces out of  384
+ Generating message  313  for faces out of  384
+ Generating message  314  for faces out of  384
+ Generating message  315  for faces out of  384
+ Generating message  316  for faces out of  384
+ Generating message  317  for faces out of  384
+ Generating message  318  for faces out of  384
+ Generating message  319  for faces out of  384
+ Generating message  320  for faces out of  384
+ Generating message  321  for faces out of  384
+ Generating message  322  for faces out of  384
+ Generating message  323  for faces out of  384
+ Generating message  324  for faces out of  384
+ Generating message  325  for faces out of  384
+ Generating message  326  for faces out of  384
+ Generating message  327  for faces out of  384
+ Generating message  328  for faces out of  384
+ Generating message  329  for faces out of  384
+ Generating message  330  for faces out of  384
+ Generating message  331  for faces out of  384
+ Generating message  332  for faces out of  384
+ Generating message  333  for faces out of  384
+ Generating message  334  for faces out of  384
+ Generating message  335  for faces out of  384
+ Generating message  336  for faces out of  384
+ Generating message  337  for faces out of  384
+ Generating message  338  for faces out of  384
+ Generating message  339  for faces out of  384
+ Generating message  340  for faces out of  384
+ Generating message  341  for faces out of  384
+ Generating message  342  for faces out of  384
+ Generating message  343  for faces out of  384
+ Generating message  344  for faces out of  384
+ Generating message  345  for faces out of  384
+ Generating message  346  for faces out of  384
+ Generating message  347  for faces out of  384
+ Generating message  348  for faces out of  384
+ Generating message  349  for faces out of  384
+ Generating message  350  for faces out of  384
+ Generating message  351  for faces out of  384
+ Generating message  352  for faces out of  384
+ Generating message  353  for faces out of  384
+ Generating message  354  for faces out of  384
+ Generating message  355  for faces out of  384
+ Generating message  356  for faces out of  384
+ Generating message  357  for faces out of  384
+ Generating message  358  for faces out of  384
+ Generating message  359  for faces out of  384
+ Generating message  360  for faces out of  384
+ Generating message  361  for faces out of  384
+ Generating message  362  for faces out of  384
+ Generating message  363  for faces out of  384
+ Generating message  364  for faces out of  384
+ Generating message  365  for faces out of  384
+ Generating message  366  for faces out of  384
+ Generating message  367  for faces out of  384
+ Generating message  368  for faces out of  384
+ Generating message  369  for faces out of  384
+ Generating message  370  for faces out of  384
+ Generating message  371  for faces out of  384
+ Generating message  372  for faces out of  384
+ Generating message  373  for faces out of  384
+ Generating message  374  for faces out of  384
+ Generating message  375  for faces out of  384
+ Generating message  376  for faces out of  384
+ Generating message  377  for faces out of  384
+ Generating message  378  for faces out of  384
+ Generating message  379  for faces out of  384
+ Generating message  380  for faces out of  384
+ Generating message  381  for faces out of  384
+ Generating message  382  for faces out of  384
+ Generating message  383  for faces out of  384
+ Generating message  384  for faces out of  384
+ 
+ all the messages for chunk faces have the right size
+ 
+ Generating message  1  for corners out of  8
+ Generating message  2  for corners out of  8
+ Generating message  3  for corners out of  8
+ Generating message  4  for corners out of  8
+ Generating message  5  for corners out of  8
+ Generating message  6  for corners out of  8
+ Generating message  7  for corners out of  8
+ Generating message  8  for corners out of  8
+ 
+   ...preparing MPI interfaces
+ 
+ outer core region:
+   #max of points in MPI buffers along xi npoin2D_xi =  11241
+   #max of array elements transferred npoin2D_xi*NDIM =  33723
+ 
+   #max of points in MPI buffers along eta npoin2D_eta =  11241
+   #max of array elements transferred npoin2D_eta*NDIM =  33723
+ 
+ outer core MPI:
+   maximum interfaces: 8
+   MPI addressing maximum interfaces: 8
+   MPI addressing : all interfaces okay
+ 
+   total MPI interface points :  287675496
+   unique MPI interface points:  264830976
+   maximum valence            :  3
+   total assembled MPI interface points: 264830976
+ 
+ 
+   ...element inner/outer separation 
+ percentage of edge elements in outer core  51.47058868 %
+ percentage of volume elements in outer core  48.52941132 %
+ 
+ 
+   ...element mesh coloring 
+   mesh coloring:  F
+ 
+   ...creating mass matrix
+ 
+   ...saving binary files
+ 
+    calculated top area:  3.74933401851382619
+ calculated bottom area:  0.461558631226826943
+ 
+ *******************************************
+ creating mesh in region  3
+ this region is the inner core
+ *******************************************
+ 
+ 
+ first pass
+ 
+   ...allocating arrays 
+ 
+   ...setting up layers 
+ 
+   ...creating mesh elements 
+   creating layer  1 out of  1
+    100.0%    current clock (NOT elapsed) time is: 06h 12min 44sec
+ 
+   creating central cube
+ 
+   ...creating global addressing
+ 
+   ...creating MPI buffers
+ 
+ second pass
+ 
+   ...allocating arrays 
+ 
+   ...setting up layers 
+ 
+   ...creating mesh elements 
+   creating layer  1 out of  1
+    100.0%    current clock (NOT elapsed) time is: 06h 12min 44sec
+ 
+   creating central cube
+ 
+   ...fills global mesh points 
+ 
+   ...checking mesh resolution and time step
+ 
+ ----------------------------------
+   Verification of mesh parameters:
+ ----------------------------------
+   Region is inner core
+ 
+   Max element edge size =  42.02349091  (km)
+   Min element edge size =  8.882279396  (km)
+   Max/min ratio =  4.731160641
+ 
+   Max Jacobian eigenvalue ratio =  0.9997760653
+   Min Jacobian eigenvalue ratio =  0.2392364144
+ 
+   Minimum period resolved =  5.201578140  (s)
+   Minimum period resolved (empirical) =  4.250000000  (s)
+   Maximum suggested time step =  0.7549999654E-01  (s)
+ 
+   for DT :  0.4749999940E-01  (s)
+   Max stability for wave velocities =  0.3448811471
+ ----------------------------------
+ 
+ 
+   ...precomputing Jacobian
+ 
+   ...creating chunk buffers
+ 
+ ----- creating chunk buffers -----
+ 
+ There are  32  slices along xi in each chunk
+ There are  32  slices along eta in each chunk
+ There is a total of  1024  slices in each chunk
+ There are  6  chunks
+ There is a total of  6144  slices in all the chunks
+ 
+ There is a total of  384  messages to assemble faces between chunks
+ 
+ Generating message  1  for faces out of  384
+ Generating message  2  for faces out of  384
+ Generating message  3  for faces out of  384
+ Generating message  4  for faces out of  384
+ Generating message  5  for faces out of  384
+ Generating message  6  for faces out of  384
+ Generating message  7  for faces out of  384
+ Generating message  8  for faces out of  384
+ Generating message  9  for faces out of  384
+ Generating message  10  for faces out of  384
+ Generating message  11  for faces out of  384
+ Generating message  12  for faces out of  384
+ Generating message  13  for faces out of  384
+ Generating message  14  for faces out of  384
+ Generating message  15  for faces out of  384
+ Generating message  16  for faces out of  384
+ Generating message  17  for faces out of  384
+ Generating message  18  for faces out of  384
+ Generating message  19  for faces out of  384
+ Generating message  20  for faces out of  384
+ Generating message  21  for faces out of  384
+ Generating message  22  for faces out of  384
+ Generating message  23  for faces out of  384
+ Generating message  24  for faces out of  384
+ Generating message  25  for faces out of  384
+ Generating message  26  for faces out of  384
+ Generating message  27  for faces out of  384
+ Generating message  28  for faces out of  384
+ Generating message  29  for faces out of  384
+ Generating message  30  for faces out of  384
+ Generating message  31  for faces out of  384
+ Generating message  32  for faces out of  384
+ Generating message  33  for faces out of  384
+ Generating message  34  for faces out of  384
+ Generating message  35  for faces out of  384
+ Generating message  36  for faces out of  384
+ Generating message  37  for faces out of  384
+ Generating message  38  for faces out of  384
+ Generating message  39  for faces out of  384
+ Generating message  40  for faces out of  384
+ Generating message  41  for faces out of  384
+ Generating message  42  for faces out of  384
+ Generating message  43  for faces out of  384
+ Generating message  44  for faces out of  384
+ Generating message  45  for faces out of  384
+ Generating message  46  for faces out of  384
+ Generating message  47  for faces out of  384
+ Generating message  48  for faces out of  384
+ Generating message  49  for faces out of  384
+ Generating message  50  for faces out of  384
+ Generating message  51  for faces out of  384
+ Generating message  52  for faces out of  384
+ Generating message  53  for faces out of  384
+ Generating message  54  for faces out of  384
+ Generating message  55  for faces out of  384
+ Generating message  56  for faces out of  384
+ Generating message  57  for faces out of  384
+ Generating message  58  for faces out of  384
+ Generating message  59  for faces out of  384
+ Generating message  60  for faces out of  384
+ Generating message  61  for faces out of  384
+ Generating message  62  for faces out of  384
+ Generating message  63  for faces out of  384
+ Generating message  64  for faces out of  384
+ Generating message  65  for faces out of  384
+ Generating message  66  for faces out of  384
+ Generating message  67  for faces out of  384
+ Generating message  68  for faces out of  384
+ Generating message  69  for faces out of  384
+ Generating message  70  for faces out of  384
+ Generating message  71  for faces out of  384
+ Generating message  72  for faces out of  384
+ Generating message  73  for faces out of  384
+ Generating message  74  for faces out of  384
+ Generating message  75  for faces out of  384
+ Generating message  76  for faces out of  384
+ Generating message  77  for faces out of  384
+ Generating message  78  for faces out of  384
+ Generating message  79  for faces out of  384
+ Generating message  80  for faces out of  384
+ Generating message  81  for faces out of  384
+ Generating message  82  for faces out of  384
+ Generating message  83  for faces out of  384
+ Generating message  84  for faces out of  384
+ Generating message  85  for faces out of  384
+ Generating message  86  for faces out of  384
+ Generating message  87  for faces out of  384
+ Generating message  88  for faces out of  384
+ Generating message  89  for faces out of  384
+ Generating message  90  for faces out of  384
+ Generating message  91  for faces out of  384
+ Generating message  92  for faces out of  384
+ Generating message  93  for faces out of  384
+ Generating message  94  for faces out of  384
+ Generating message  95  for faces out of  384
+ Generating message  96  for faces out of  384
+ Generating message  97  for faces out of  384
+ Generating message  98  for faces out of  384
+ Generating message  99  for faces out of  384
+ Generating message  100  for faces out of  384
+ Generating message  101  for faces out of  384
+ Generating message  102  for faces out of  384
+ Generating message  103  for faces out of  384
+ Generating message  104  for faces out of  384
+ Generating message  105  for faces out of  384
+ Generating message  106  for faces out of  384
+ Generating message  107  for faces out of  384
+ Generating message  108  for faces out of  384
+ Generating message  109  for faces out of  384
+ Generating message  110  for faces out of  384
+ Generating message  111  for faces out of  384
+ Generating message  112  for faces out of  384
+ Generating message  113  for faces out of  384
+ Generating message  114  for faces out of  384
+ Generating message  115  for faces out of  384
+ Generating message  116  for faces out of  384
+ Generating message  117  for faces out of  384
+ Generating message  118  for faces out of  384
+ Generating message  119  for faces out of  384
+ Generating message  120  for faces out of  384
+ Generating message  121  for faces out of  384
+ Generating message  122  for faces out of  384
+ Generating message  123  for faces out of  384
+ Generating message  124  for faces out of  384
+ Generating message  125  for faces out of  384
+ Generating message  126  for faces out of  384
+ Generating message  127  for faces out of  384
+ Generating message  128  for faces out of  384
+ Generating message  129  for faces out of  384
+ Generating message  130  for faces out of  384
+ Generating message  131  for faces out of  384
+ Generating message  132  for faces out of  384
+ Generating message  133  for faces out of  384
+ Generating message  134  for faces out of  384
+ Generating message  135  for faces out of  384
+ Generating message  136  for faces out of  384
+ Generating message  137  for faces out of  384
+ Generating message  138  for faces out of  384
+ Generating message  139  for faces out of  384
+ Generating message  140  for faces out of  384
+ Generating message  141  for faces out of  384
+ Generating message  142  for faces out of  384
+ Generating message  143  for faces out of  384
+ Generating message  144  for faces out of  384
+ Generating message  145  for faces out of  384
+ Generating message  146  for faces out of  384
+ Generating message  147  for faces out of  384
+ Generating message  148  for faces out of  384
+ Generating message  149  for faces out of  384
+ Generating message  150  for faces out of  384
+ Generating message  151  for faces out of  384
+ Generating message  152  for faces out of  384
+ Generating message  153  for faces out of  384
+ Generating message  154  for faces out of  384
+ Generating message  155  for faces out of  384
+ Generating message  156  for faces out of  384
+ Generating message  157  for faces out of  384
+ Generating message  158  for faces out of  384
+ Generating message  159  for faces out of  384
+ Generating message  160  for faces out of  384
+ Generating message  161  for faces out of  384
+ Generating message  162  for faces out of  384
+ Generating message  163  for faces out of  384
+ Generating message  164  for faces out of  384
+ Generating message  165  for faces out of  384
+ Generating message  166  for faces out of  384
+ Generating message  167  for faces out of  384
+ Generating message  168  for faces out of  384
+ Generating message  169  for faces out of  384
+ Generating message  170  for faces out of  384
+ Generating message  171  for faces out of  384
+ Generating message  172  for faces out of  384
+ Generating message  173  for faces out of  384
+ Generating message  174  for faces out of  384
+ Generating message  175  for faces out of  384
+ Generating message  176  for faces out of  384
+ Generating message  177  for faces out of  384
+ Generating message  178  for faces out of  384
+ Generating message  179  for faces out of  384
+ Generating message  180  for faces out of  384
+ Generating message  181  for faces out of  384
+ Generating message  182  for faces out of  384
+ Generating message  183  for faces out of  384
+ Generating message  184  for faces out of  384
+ Generating message  185  for faces out of  384
+ Generating message  186  for faces out of  384
+ Generating message  187  for faces out of  384
+ Generating message  188  for faces out of  384
+ Generating message  189  for faces out of  384
+ Generating message  190  for faces out of  384
+ Generating message  191  for faces out of  384
+ Generating message  192  for faces out of  384
+ Generating message  193  for faces out of  384
+ Generating message  194  for faces out of  384
+ Generating message  195  for faces out of  384
+ Generating message  196  for faces out of  384
+ Generating message  197  for faces out of  384
+ Generating message  198  for faces out of  384
+ Generating message  199  for faces out of  384
+ Generating message  200  for faces out of  384
+ Generating message  201  for faces out of  384
+ Generating message  202  for faces out of  384
+ Generating message  203  for faces out of  384
+ Generating message  204  for faces out of  384
+ Generating message  205  for faces out of  384
+ Generating message  206  for faces out of  384
+ Generating message  207  for faces out of  384
+ Generating message  208  for faces out of  384
+ Generating message  209  for faces out of  384
+ Generating message  210  for faces out of  384
+ Generating message  211  for faces out of  384
+ Generating message  212  for faces out of  384
+ Generating message  213  for faces out of  384
+ Generating message  214  for faces out of  384
+ Generating message  215  for faces out of  384
+ Generating message  216  for faces out of  384
+ Generating message  217  for faces out of  384
+ Generating message  218  for faces out of  384
+ Generating message  219  for faces out of  384
+ Generating message  220  for faces out of  384
+ Generating message  221  for faces out of  384
+ Generating message  222  for faces out of  384
+ Generating message  223  for faces out of  384
+ Generating message  224  for faces out of  384
+ Generating message  225  for faces out of  384
+ Generating message  226  for faces out of  384
+ Generating message  227  for faces out of  384
+ Generating message  228  for faces out of  384
+ Generating message  229  for faces out of  384
+ Generating message  230  for faces out of  384
+ Generating message  231  for faces out of  384
+ Generating message  232  for faces out of  384
+ Generating message  233  for faces out of  384
+ Generating message  234  for faces out of  384
+ Generating message  235  for faces out of  384
+ Generating message  236  for faces out of  384
+ Generating message  237  for faces out of  384
+ Generating message  238  for faces out of  384
+ Generating message  239  for faces out of  384
+ Generating message  240  for faces out of  384
+ Generating message  241  for faces out of  384
+ Generating message  242  for faces out of  384
+ Generating message  243  for faces out of  384
+ Generating message  244  for faces out of  384
+ Generating message  245  for faces out of  384
+ Generating message  246  for faces out of  384
+ Generating message  247  for faces out of  384
+ Generating message  248  for faces out of  384
+ Generating message  249  for faces out of  384
+ Generating message  250  for faces out of  384
+ Generating message  251  for faces out of  384
+ Generating message  252  for faces out of  384
+ Generating message  253  for faces out of  384
+ Generating message  254  for faces out of  384
+ Generating message  255  for faces out of  384
+ Generating message  256  for faces out of  384
+ Generating message  257  for faces out of  384
+ Generating message  258  for faces out of  384
+ Generating message  259  for faces out of  384
+ Generating message  260  for faces out of  384
+ Generating message  261  for faces out of  384
+ Generating message  262  for faces out of  384
+ Generating message  263  for faces out of  384
+ Generating message  264  for faces out of  384
+ Generating message  265  for faces out of  384
+ Generating message  266  for faces out of  384
+ Generating message  267  for faces out of  384
+ Generating message  268  for faces out of  384
+ Generating message  269  for faces out of  384
+ Generating message  270  for faces out of  384
+ Generating message  271  for faces out of  384
+ Generating message  272  for faces out of  384
+ Generating message  273  for faces out of  384
+ Generating message  274  for faces out of  384
+ Generating message  275  for faces out of  384
+ Generating message  276  for faces out of  384
+ Generating message  277  for faces out of  384
+ Generating message  278  for faces out of  384
+ Generating message  279  for faces out of  384
+ Generating message  280  for faces out of  384
+ Generating message  281  for faces out of  384
+ Generating message  282  for faces out of  384
+ Generating message  283  for faces out of  384
+ Generating message  284  for faces out of  384
+ Generating message  285  for faces out of  384
+ Generating message  286  for faces out of  384
+ Generating message  287  for faces out of  384
+ Generating message  288  for faces out of  384
+ Generating message  289  for faces out of  384
+ Generating message  290  for faces out of  384
+ Generating message  291  for faces out of  384
+ Generating message  292  for faces out of  384
+ Generating message  293  for faces out of  384
+ Generating message  294  for faces out of  384
+ Generating message  295  for faces out of  384
+ Generating message  296  for faces out of  384
+ Generating message  297  for faces out of  384
+ Generating message  298  for faces out of  384
+ Generating message  299  for faces out of  384
+ Generating message  300  for faces out of  384
+ Generating message  301  for faces out of  384
+ Generating message  302  for faces out of  384
+ Generating message  303  for faces out of  384
+ Generating message  304  for faces out of  384
+ Generating message  305  for faces out of  384
+ Generating message  306  for faces out of  384
+ Generating message  307  for faces out of  384
+ Generating message  308  for faces out of  384
+ Generating message  309  for faces out of  384
+ Generating message  310  for faces out of  384
+ Generating message  311  for faces out of  384
+ Generating message  312  for faces out of  384
+ Generating message  313  for faces out of  384
+ Generating message  314  for faces out of  384
+ Generating message  315  for faces out of  384
+ Generating message  316  for faces out of  384
+ Generating message  317  for faces out of  384
+ Generating message  318  for faces out of  384
+ Generating message  319  for faces out of  384
+ Generating message  320  for faces out of  384
+ Generating message  321  for faces out of  384
+ Generating message  322  for faces out of  384
+ Generating message  323  for faces out of  384
+ Generating message  324  for faces out of  384
+ Generating message  325  for faces out of  384
+ Generating message  326  for faces out of  384
+ Generating message  327  for faces out of  384
+ Generating message  328  for faces out of  384
+ Generating message  329  for faces out of  384
+ Generating message  330  for faces out of  384
+ Generating message  331  for faces out of  384
+ Generating message  332  for faces out of  384
+ Generating message  333  for faces out of  384
+ Generating message  334  for faces out of  384
+ Generating message  335  for faces out of  384
+ Generating message  336  for faces out of  384
+ Generating message  337  for faces out of  384
+ Generating message  338  for faces out of  384
+ Generating message  339  for faces out of  384
+ Generating message  340  for faces out of  384
+ Generating message  341  for faces out of  384
+ Generating message  342  for faces out of  384
+ Generating message  343  for faces out of  384
+ Generating message  344  for faces out of  384
+ Generating message  345  for faces out of  384
+ Generating message  346  for faces out of  384
+ Generating message  347  for faces out of  384
+ Generating message  348  for faces out of  384
+ Generating message  349  for faces out of  384
+ Generating message  350  for faces out of  384
+ Generating message  351  for faces out of  384
+ Generating message  352  for faces out of  384
+ Generating message  353  for faces out of  384
+ Generating message  354  for faces out of  384
+ Generating message  355  for faces out of  384
+ Generating message  356  for faces out of  384
+ Generating message  357  for faces out of  384
+ Generating message  358  for faces out of  384
+ Generating message  359  for faces out of  384
+ Generating message  360  for faces out of  384
+ Generating message  361  for faces out of  384
+ Generating message  362  for faces out of  384
+ Generating message  363  for faces out of  384
+ Generating message  364  for faces out of  384
+ Generating message  365  for faces out of  384
+ Generating message  366  for faces out of  384
+ Generating message  367  for faces out of  384
+ Generating message  368  for faces out of  384
+ Generating message  369  for faces out of  384
+ Generating message  370  for faces out of  384
+ Generating message  371  for faces out of  384
+ Generating message  372  for faces out of  384
+ Generating message  373  for faces out of  384
+ Generating message  374  for faces out of  384
+ Generating message  375  for faces out of  384
+ Generating message  376  for faces out of  384
+ Generating message  377  for faces out of  384
+ Generating message  378  for faces out of  384
+ Generating message  379  for faces out of  384
+ Generating message  380  for faces out of  384
+ Generating message  381  for faces out of  384
+ Generating message  382  for faces out of  384
+ Generating message  383  for faces out of  384
+ Generating message  384  for faces out of  384
+ 
+ all the messages for chunk faces have the right size
+ 
+ Generating message  1  for corners out of  8
+ Generating message  2  for corners out of  8
+ Generating message  3  for corners out of  8
+ Generating message  4  for corners out of  8
+ Generating message  5  for corners out of  8
+ Generating message  6  for corners out of  8
+ Generating message  7  for corners out of  8
+ Generating message  8  for corners out of  8
+ 
+   ...preparing MPI interfaces
+ 
+ inner core region:
+   #max of points in MPI buffers along xi npoin2D_xi =  9537
+   #max of array elements transferred npoin2D_xi*NDIM =  28611
+ 
+   #max of points in MPI buffers along eta npoin2D_eta =  9537
+   #max of array elements transferred npoin2D_eta*NDIM =  28611
+ 
+ 
+ including central cube
+ 
+ inner core MPI:
+ inner core with central cube MPI:
+   maximum interfaces: 75
+   MPI addressing maximum interfaces: 75
+   MPI addressing : all interfaces okay
+ 
+   total MPI interface points :  61552240
+   unique MPI interface points:  54204416
+   maximum valence            :  7
+   total assembled MPI interface points: 54204416
+ 
+ 
+   ...element inner/outer separation 
+ percentage of edge elements in inner core  40.89285660 %
+ percentage of volume elements in inner core  59.10714340 %
+ 
+ 
+   ...element mesh coloring 
+   mesh coloring:  F
+ 
+   ...creating mass matrix
+ 
+   ...saving binary files
+ 
+    calculated top area:  0.461558631226826943
+ calculated bottom area:  0.227582714637674044
+ 
+ calculated volume:  4.18410844050083330
+ 
+ computed total Earth mass for this density model and mesh: 
+     0.5971546557E+25  kg
+    (should be not too far from 5.974E+24 kg)
+ 
+ average density for this density model and mesh: 
+     5519.008789  kg/m3
+    (should be not too far from 5514 kg/m3)
+ 
+ position of the center of mass of the Earth for this density model and mesh: 
+    x =  0.1658560149E-01  km
+    y =  -0.1642850041E-01  km
+    z =  0.1460101008  km
+    distance to center =  0.1478645504  km
+ 
+ Repartition of elements in regions:
+ ----------------------------------
+ 
+ total number of elements in each slice:  40640
+ 
+  - crust and mantle:  83.77952576  %
+  - outer core:  10.70866108  %
+  - inner core:  5.511811256  %
+ 
+ for some mesh statistics, see comments in file OUTPUT_FILES/values_from_mesher.h
+ 
+ Load balancing = 100 % by definition
+ 
+ 
+ the time step of the solver will be DT =  0.4749999940E-01
+ 
+ using single precision for the calculations
+ 
+ smallest and largest possible floating-point numbers are:  0.1175494351E-37 0.3402823466E+39
+ 
+ 
+ Elapsed time for mesh generation and buffer creation in seconds =  138.646729143336415
+ Elapsed time for mesh generation and buffer creation in hh:mm:ss =    0 h 02 m 18 s
+ 
+ End of mesh generation
+ 

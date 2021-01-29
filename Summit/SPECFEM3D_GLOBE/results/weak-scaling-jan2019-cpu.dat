@@ -1,0 +1,59 @@
+# weak scaling benchmark - Summit
+# daniel, Jan 2019
+# 
+# CPU only
+#
+# results based on strong scaling NEX 512:
+# # 384 procs, 12 nodes, 32 ppn
+# Total elapsed time in seconds =  356.048055576975457
+#
+# 1536 procs, 48 nodes, 32 ppn
+# Total elapsed time in seconds =  86.8447252999758348
+#
+# 6144 procs, 192 nodes, 32 ppn
+# Total elapsed time in seconds =  25.3724069439922459
+#
+# 24576 procs, 768 nodes, 32 ppn
+# Total elapsed time in seconds =  6.70958844595588744
+#
+# 96 procs, 3 nodes, 32 ppn -> total elements per slice =       322560
+# 384 procs, 12 nodes, 32 ppn ->  total elements per slice =        80640
+# 1536 procs, 48 nodes, 32 ppn -> total elements per slice =        20160
+# 6144 procs, 192 nodes, 32 ppn -> total elements per slice =         5040
+# 24576 procs, 768 nodes, 32 ppn -> total elements per slice =         1260
+#
+# nex 512 -> no good match to have around 40,000 elements per slice/process
+# but strong scaling pretty good on CPUs, so with elem_per_slice re-normalization might be close enough...
+#
+#nodes #nproc   #nex_xi #elem_per_slice #total time  -> time_per_timestep_per_elem = total_time / 300 / elem_per_slice
+#GPU: 16      96      256     47040     7.66e-8 time-per-timestep-per-elem # (added daniel: result from strong scaling run CPUstrong96)
+#3       96      512	322560		1334.04721626907121  # requires ~ 10GB per process, summit node limit 256GB per chip -> 2 x 256GB per node; use packed
+#3	96	256	47040		201.564184946008027
+12      384     512	80640		356.048055576975457  # -> 356.048/80640/300 = 1.47e-05 time-per-timestep-per-elem
+#48      1536    512	20160		86.8447252999758348  #(from strong)
+48 	1536	640	37825		155.897600350086577  # not packed: 164.934781771036796
+#192     6144    512	5040		25.3724069439922459  #(from strong)
+192	6144	1024	40640		189.158575396984816
+#768     24576   512	1260		 6.70958844595588744
+768	24576	2048	135184		682.602604314917699  # turn off TOPOGRAPHY, otherwise Jacobian error
+#768	24576	1024	10160		51.8609731029719114
+1200	38400	1280	21144		109.086400509986561  # turn off TOPOGRAPHY
+
+
+# GPU strong scaling results
+# NEX 512
+#nodes #nproc #nproc_xi         # avg time per time step (s) ->  # total time = avg_time_per_timestep * 300
+#16      96      4               0.020275			6.0825
+#64      384     8               0.005388			1.6164
+#256     1536    16              0.001892			0.5676
+#1024    6144    32              0.001175			0.3525
+#
+#nodes #nproc   #nex_xi #elem_per_slice #total time 
+16 	96	512	322560		6.0825
+64	384	512	80640		1.6164
+256	1536	512	20160		0.5676
+1024	6144	512	5040		0.3525
+
+
+
+
