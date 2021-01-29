@@ -1,0 +1,14 @@
+# strong scaling
+#
+# Marconi100
+# run on Summit with 4 GPUs per node
+# Oct. 26, 2020
+#
+#nodes 	#nproc  #nex_xi #elem_per_slice #total time  -> time_per_timestep_per_elem = total_time / 300 / elem_per_slice
+6	24	256	188160		3.79216353600000389
+24	96	256	47040		1.02485401299999879
+96	384	256	11760		0.333605903000000037
+384	1536	256	2940		0.191929146000000106
+
+
+
